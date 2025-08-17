@@ -29,6 +29,26 @@
     };
   };
 
+  console.keyMap = inputs.system.keyboardLayout;
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.config.allowUnfree = true;
+
+  environment = {
+    sessionVariables = {
+      WLR_NO_HARDWARE_CURSORS = "1";
+      NIXOS_OZONE_WL = "1";
+    };
+    systemPackages = map (package: inputs.core.pkgs.${ package }) inputs.system.packages;
+  };
+
+  programs = {
+    hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
+  };
+
   services = {
     xserver.xkb = {
       layout = inputs.system.keyboardLayout;
@@ -52,26 +72,6 @@
       enable = true;
       audio.enable = true;
     };
-  };
-
-  console.keyMap = inputs.system.keyboardLayout;
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowUnfree = true;
-
-  programs = {
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
-  };
-
-  environment = {
-    sessionVariables = {
-      WLR_NO_HARDWARE_CURSORS = "1";
-      NIXOS_OZONE_WL = "1";
-    };
-    systemPackages = map (package: inputs.core.pkgs.${ package }) inputs.system.packages;
   };
 
   hardware = {
