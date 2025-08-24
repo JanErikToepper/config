@@ -4,10 +4,11 @@
       core = rec {
         nixpkgs = inputs.nixpkgs;
         home-manager = inputs.home-manager;
-        firefox-addons = inputs.firefox-addons.packages.${ system.architecture };
-        nixvim = inputs.nixvim;
         pkgs = nixpkgs.legacyPackages.${ system.architecture };
         version = "25.05";
+        hyprland-plugins = inputs.hyprland-plugins.packages.${ system.architecture };
+        firefox-addons = inputs.firefox-addons.packages.${ system.architecture };
+        nixvim = inputs.nixvim;
       };
 
       system = {
@@ -29,7 +30,7 @@
         name = "toepper";
         hashedPassword = "$6$K6xoZ6UoJ.FNUlGQ$q1gy5/8UtyYh/.hvioRHmzLE9ZHSygfO93Nm0ptVAV4e3gSPOlo84gY970O1j2Yl7tpYD9RuLEhdPHQJEM3L31";
         groups = [ "networkmanager" "wheel" ];
-        packages = [ "nautilus" ];
+        packages = [ "nautilus" "devenv" "direnv" ];
       };
 
       args = {
@@ -64,9 +65,12 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    firefox-addons = {
-      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
     };
+    firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
     nixvim = {
       url = "github:nix-community/nixvim/nixos-25.05";
       inputs.nixpkgs.follows = "nixpkgs";

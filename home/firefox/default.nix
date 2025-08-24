@@ -97,7 +97,7 @@
         settings = [
           {
             name = "Bitwarden";
-            url = "https://vault.bitwarden.com/#/vault";
+            url = "https://vault.bitwarden.com/#/vault/";
           }
           {
             name = "Outlook";
@@ -105,7 +105,15 @@
           }
           {
             name = "Github";
-            url = "https://github.com/JanErikToepper";
+            url = "https://github.com/JanErikToepper/";
+          }
+          {
+            name = "TypeScript";
+            url = "https://www.typescriptlang.org/docs/";
+          }
+          {
+            name = "Playwright";
+            url = "https://playwright.dev/docs/intro/";
           }
         ];
       };

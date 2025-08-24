@@ -3,6 +3,9 @@
     enable = true;
     userName = "Jan Erik Toepper";
     userEmail = "tech.toepper@outlook.com";
+    extraConfig = {
+      init.defaultBranch = "main";
+    };
   };
 }
 

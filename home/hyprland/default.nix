@@ -33,7 +33,8 @@
         "$mainMod, return, exec, kitty"
         "$mainMod, escape, killactive"
         "$mainMod, f, exec, $fileManager"
-        "$mainMod, s, exec, $browser"
+        "$mainMod, b, exec, $browser"
+        "$mainMod, s, exec, steam"
 
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
@@ -66,6 +67,7 @@
 
       "exec-once" = [ "waybar" ];
     };
+    plugins = with inputs.core.hyprland-plugins; [];
   };
 
   

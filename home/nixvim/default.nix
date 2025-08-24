@@ -10,11 +10,35 @@ in {
       enable = true;
 
       colorschemes.modus.enable = true;
-  
+
+      extraConfigLua = ''
+local function branch_name()
+	local branch = io.popen("git rev-parse --abbrev-ref HEAD 2>/dev/null")
+  local commit = io.popen("git log -1 --pretty=%B HEAD 2>/dev/null")
+	if branch then
+		local name = branch:read("*l")
+    local com = commit:read("*l")
+		branch:close()
+    commit:close()
+		if name then
+			return string.format('%s: %s', name, com)
+		else
+			return ""
+		end
+	end
+end
+
+function _G.status_line()
+	return " "
+		.. branch_name()
+end
+
+vim.opt.statusline = "%{%v:lua.status_line()%}"
+      '';
+
       globals= {
         mapleader = " ";
         maplocalleader = " ";
-        # netrw_keepdir = 0;
         netrw_winsize = 30;
         netrw_banner = 0;
         netrw_list_hide = "\(^\|\s\s\)\zs\.\S\+";
@@ -35,6 +59,7 @@ in {
         ignorecase = true;
         incsearch = true;
         infercase = true;
+        laststatus = 2;
         lazyredraw = true;
         linebreak = true;
         maxmempattern = 20000;
@@ -53,7 +78,7 @@ in {
         softtabstop = -1;
         splitbelow = true;
         splitright = true;
-        # statusline = ;
+        statusline = "%f";
         swapfile = false;
         synmaxcol = 300;
         tabstop = 2;
@@ -135,10 +160,10 @@ in {
           enable = true;
           settings = {
             mapping = {
-              "<cr>" = "cmp.mapping.confirm()";
-              "<esc>" = "cmp.mapping.abort()";
-              "<c-n>" = "cmp.mapping.select_next_item()";
-              "<c-p>" = "cmp.mapping.select_prev_item()";
+              "<c-x>" = "cmp.mapping.close()";
+              "<cr>" = "cmp.mapping.confirm({ select = true })";
+              "<c-j>" = "cmp.mapping.select_next_item()";
+              "<c-k>" = "cmp.mapping.select_prev_item()";
             };
             preselect = "cmp.PreselectMode.Item";
             sources = [
@@ -146,10 +171,10 @@ in {
                 name = "nvim_lsp";
               }
               {
-                name = "path"; 
+                name = "path";
               }
               {
-                name = "buffer"; 
+                name = "buffer";
               }
             ];
           };
@@ -157,7 +182,16 @@ in {
         fugitive.enable = true;
         lspconfig.enable = true;
         treesitter.enable = true;
-        telescope.enable = true;
+        telescope = {
+          enable = true;
+          settings.defaults = {
+            file_ignore_patterns = [
+              "node_modules/"
+              "package-lock.json"
+              "package.json"
+            ];
+          };
+        };
         tmux-navigator.enable = true;
         web-devicons.enable = true;
       };

@@ -79,8 +79,11 @@ in {
         bind-key J swap-pane -D
         bind-key K swap-pane -U
 
-        bind-key v splitw -h
-        bind-key w splitw -v 
+        bind-key w swap-window -t +1\; select-window -t +1
+        bind-key W swap-window -t -1\; select-window -t -1
+
+        bind-key V splitw -h
+        bind-key H splitw -v 
       '';
     };
   };
