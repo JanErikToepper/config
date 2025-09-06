@@ -108,6 +108,10 @@
             url = "https://github.com/JanErikToepper/";
           }
           {
+            name = "Git";
+            url = "https://git-scm.com/docs/";
+          }
+          {
             name = "TypeScript";
             url = "https://www.typescriptlang.org/docs/";
           }

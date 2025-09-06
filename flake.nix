@@ -30,7 +30,7 @@
         name = "toepper";
         hashedPassword = "$6$K6xoZ6UoJ.FNUlGQ$q1gy5/8UtyYh/.hvioRHmzLE9ZHSygfO93Nm0ptVAV4e3gSPOlo84gY970O1j2Yl7tpYD9RuLEhdPHQJEM3L31";
         groups = [ "networkmanager" "wheel" ];
-        packages = [ "nautilus" "devenv" "direnv" ];
+        packages = [ "nautilus" "devenv" "tmuxifier" ];
       };
 
       args = {

@@ -82,7 +82,7 @@ vim.opt.statusline = "%{%v:lua.status_line()%}"
         swapfile = false;
         synmaxcol = 300;
         tabstop = 2;
-        timeoutlen = 500;
+        # timeoutlen = 500;
         ttimeoutlen = 0;
         undofile = true;
         updatetime = 300;
@@ -115,10 +115,6 @@ vim.opt.statusline = "%{%v:lua.status_line()%}"
 
       keymaps = [
         {
-          key = "<leader>at";
-          action = "<cmd>AerialToggle<cr>";
-        }
-        {
           key = "<leader>dn";
           action = "<cmd>lua vim.diagnostic.goto_next()<cr>";
         }
@@ -138,23 +134,21 @@ vim.opt.statusline = "%{%v:lua.status_line()%}"
           key = "<leader>fg";
           action = "<cmd>Telescope live_grep<cr>";
         }
+        {
+          key = "<leader>gl";
+          action = "<cmd>G log<cr>";
+        }
+        {
+          key = "<leader>gwc";
+          action = "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>";
+        }
+        {
+          key = "<leader>gwl";
+          action = "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>";
+        }
       ];
   
       plugins = {
-        aerial = {
-          enable = true;
-          settings = {
-            autojump = true;
-            close_automatic_events = [ "unsupported" ];
-            close_on_select = true;
-            highlight_on_hover = true;
-            highlight_on_jump = false;
-            layout = {
-              default_direction = "right";
-              min_width = 0.2;
-            };
-          };
-        };
         autoclose.enable = true;
         cmp = {
           enable = true;
@@ -162,8 +156,8 @@ vim.opt.statusline = "%{%v:lua.status_line()%}"
             mapping = {
               "<c-x>" = "cmp.mapping.close()";
               "<cr>" = "cmp.mapping.confirm({ select = true })";
-              "<c-j>" = "cmp.mapping.select_next_item()";
-              "<c-k>" = "cmp.mapping.select_prev_item()";
+              "<c-n>" = "cmp.mapping.select_next_item()";
+              "<c-p>" = "cmp.mapping.select_prev_item()";
             };
             preselect = "cmp.PreselectMode.Item";
             sources = [
@@ -191,6 +185,10 @@ vim.opt.statusline = "%{%v:lua.status_line()%}"
               "package.json"
             ];
           };
+        };
+        git-worktree = {
+          enable = true;
+          enableTelescope = true;
         };
         tmux-navigator.enable = true;
         web-devicons.enable = true;

@@ -47,12 +47,19 @@
       enable = true;
       xwayland.enable = true;
     };
+    vim = {
+      enable = true;
+      defaultEditor = true;
+    };
+    steam.enable = true;
   };
 
   services = {
-    xserver.xkb = {
-      layout = inputs.system.keyboardLayout;
-      variant = inputs.system.keyboardVariant;
+    xserver = {
+      xkb = {
+        layout = inputs.system.keyboardLayout;
+        variant = inputs.system.keyboardVariant;
+      };
     };
     keyd = {
       enable = true;
