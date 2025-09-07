@@ -5,7 +5,7 @@
 in {
   imports = [
     inputs.core.nixvim.homeModules.nixvim
-    ./modules/keymaps
+    ./modules/keymaps.nix
   ];
 
   programs = {
