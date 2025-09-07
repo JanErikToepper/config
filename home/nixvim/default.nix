@@ -1,15 +1,24 @@
-{ ... } @ inputs: let
+{ pkgs, ... } @ inputs: let
   func = inputs.config.lib.nixvim.mkRaw;
   lua = inputs.lib.generators.mkLuaInline;
   gen = inputs.lib.generators.toLua;
 in {
-  imports = [ inputs.core.nixvim.homeModules.nixvim ];
+  imports = [
+    inputs.core.nixvim.homeModules.nixvim
+    ./modules/keymaps.nix
+  ];
 
   programs = {
     nixvim = {
       enable = true;
 
-      colorschemes.modus.enable = true;
+      colorschemes.modus = {
+        enable = true;
+        luaConfig.post = ''
+          vim.api.nvim_set_hl(0, "NormalFloat", {bg="#000000"})
+       '';
+        settings.transparent = true;
+      };
 
       extraConfigLua = ''
 local function branch_name()
@@ -82,7 +91,6 @@ vim.opt.statusline = "%{%v:lua.status_line()%}"
         swapfile = false;
         synmaxcol = 300;
         tabstop = 2;
-        # timeoutlen = 500;
         ttimeoutlen = 0;
         undofile = true;
         updatetime = 300;
@@ -113,40 +121,7 @@ vim.opt.statusline = "%{%v:lua.status_line()%}"
         };
       };
 
-      keymaps = [
-        {
-          key = "<leader>dn";
-          action = "<cmd>lua vim.diagnostic.goto_next()<cr>";
-        }
-        {
-          key = "<leader>dp";
-          action = "<cmd>lua vim.diagnostic.goto_prev()<cr>";
-        }
-        {
-          key = "<leader>e";
-          action = "<cmd>Explore<cr>";
-        }
-        {
-          key = "<leader>ff";
-          action = "<cmd>Telescope find_files<cr>";
-        }
-        {
-          key = "<leader>fg";
-          action = "<cmd>Telescope live_grep<cr>";
-        }
-        {
-          key = "<leader>gl";
-          action = "<cmd>G log<cr>";
-        }
-        {
-          key = "<leader>gwc";
-          action = "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>";
-        }
-        {
-          key = "<leader>gwl";
-          action = "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>";
-        }
-      ];
+      keymaps = (import ./keymaps.nix {}).keymaps;
   
       plugins = {
         autoclose.enable = true;
@@ -178,23 +153,35 @@ vim.opt.statusline = "%{%v:lua.status_line()%}"
         treesitter.enable = true;
         telescope = {
           enable = true;
+          extensions = {
+            advanced-git-search.enable = true;
+          };
           settings.defaults = {
             file_ignore_patterns = [
+              ".git"
               "node_modules/"
               "package-lock.json"
               "package.json"
             ];
           };
         };
-        git-worktree = {
-          enable = true;
-          enableTelescope = true;
-        };
         tmux-navigator.enable = true;
         web-devicons.enable = true;
       };
 
+      extraPlugins = with pkgs.vimPlugins; [
+        vim-rhubarb
+      ]; 
+
       lsp = {
+        luaConfig.post = ''
+          vim.api.nvim_create_autocmd(
+            "FileType", {
+              pattern = {"qf"},
+              command = [[ nnoremap <buffer> <cr> <cr>:cclose<cr> ]]
+            }
+          )
+        '';
         keymaps = [
           {
             key = "gd";
