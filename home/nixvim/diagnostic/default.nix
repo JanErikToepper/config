@@ -1,4 +1,6 @@
-{ ... } @ inputs: {
+{ ... } @ inputs: let
+  func = inputs.config.lib.nixvim.mkRaw;
+in {
   programs.nixvim.diagnostic.settings = {
     virtual_text = {
       spacing = 1;
@@ -18,7 +20,6 @@
           return tostring(d.code)
         end
       '';
-      border = "solid";
     };
   };
 }

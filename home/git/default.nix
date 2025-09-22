@@ -5,6 +5,7 @@
     userEmail = "tech.toepper@outlook.com";
     ignores = [
       ".devenv"
+      ".env"
       "dist"
       "node_modules"
     ];

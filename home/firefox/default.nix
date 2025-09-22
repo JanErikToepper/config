@@ -51,8 +51,9 @@
         };
       };
       Homepage = {
+        URL = "https://vault.bitwarden.com/#/vault/";
         Locked = true;
-        StartPage = "previous-session";
+        StartPage = "homepage-locked";
       };
       ManualAppUpdateOnly = true;
       NetworkPredicton = true;
@@ -60,6 +61,9 @@
       OfferToSaveLoginsDefault = false;
       OverrideFirstRunPage = "";
       PasswordManagerEnabled = false;
+      Preferences = {
+        "browser.sessionstore.resume_from_crash" = false;
+      };
       PDFjs = {
         Enabled = true;
         EnablePermissions = true;
@@ -110,6 +114,10 @@
           {
             name = "Git";
             url = "https://git-scm.com/docs/";
+          }
+          {
+            name = "MDN";
+            url = "https://developer.mozilla.org/";
           }
           {
             name = "TypeScript";

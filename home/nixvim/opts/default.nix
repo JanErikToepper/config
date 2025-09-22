@@ -26,7 +26,7 @@
     showbreak = ">";
     showmatch = true;
     sidescrolloff = 10;
-    signcolumn = "no";
+    signcolumn = "yes";
     smartcase = true;
     smartindent = true;
     softtabstop = -1;

@@ -8,6 +8,8 @@
     packages = map (package: inputs.core.pkgs.${ package }) inputs.user.packages;
   };
 
+  fonts.packages = with inputs.core.pkgs.nerd-fonts; [ fira-code ];
+
   services.greetd = {
     enable = true;
     settings = rec {
@@ -18,5 +20,7 @@
       default_session = initial_session;
     };
   };
+
+  virtualisation.docker.enable = true;
 }
 

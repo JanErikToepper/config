@@ -1,10 +1,7 @@
-{ pkgs, ... } @ inputs: let
-  func = inputs.config.lib.nixvim.mkRaw;
-  lua = inputs.lib.generators.mkLuaInline;
-  gen = inputs.lib.generators.toLua;
-in {
+{ pkgs, ... } @ inputs: {
   imports = [
     inputs.core.nixvim.homeModules.nixvim
+    ./autocmd
     ./colorschemes
     ./diagnostic
     ./globals

@@ -7,6 +7,8 @@
       ]; 
 
       extraConfig = ''
+        set -g escape-time 0
+
         set -g prefix C-s
         set -g status-style fg=white,bg=black
         set -g status-left-length 100

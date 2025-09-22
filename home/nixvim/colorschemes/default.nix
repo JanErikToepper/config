@@ -1,4 +1,7 @@
 { ... } @ inputs: {
-  programs.nixvim.colorschemes.modus.enable = true;
+  programs.nixvim.colorschemes.vscode = {
+    enable = true;
+    settings.transparent = true;
+  };
 }
 
