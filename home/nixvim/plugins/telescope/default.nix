@@ -7,6 +7,8 @@
     };
     settings.defaults = {
       file_ignore_patterns = [
+        ".angular"
+        ".devenv"
         ".git"
         "node_modules/"
         "package-lock.json"

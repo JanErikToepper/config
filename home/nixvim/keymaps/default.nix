@@ -29,16 +29,16 @@
       action = "<cmd>lua require('telescope.builtin').help_tags()<cr>";
     }
     {
-      key = "<leader>gbb";
+      key = "<leader>gb";
       action = "<cmd>lua require('telescope.builtin').git_branches()<cr>";
-    }
-    {
-      key = "<leader>gbd";
-      action = "<cmd>AdvancedGitSearch diff_branch_file<cr>";
     }
     {
       key = "<leader>gc";
       action = "<cmd>lua require('neogit.lib.git.status').stage_all(); require('neogit').action('commit', 'commit')()<cr>";
+    }
+    {
+      key = "<leader>gd";
+      action = "<cmd>AdvancedGitSearch diff_branch_file<cr>";
     }
     {
       key = "<leader>gl";

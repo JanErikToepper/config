@@ -7,6 +7,8 @@
     extraGroups = inputs.user.groups;
     packages = map (package: inputs.core.pkgs.${ package }) inputs.user.packages;
   };
+  
+  nix.settings.trusted-users = [ "root" inputs.user.name ];
 
   fonts.packages = with inputs.core.pkgs.nerd-fonts; [ fira-code ];
 

@@ -112,6 +112,10 @@
             url = "https://github.com/JanErikToepper/";
           }
           {
+            name = "Figma";
+            url = "https://www.figma.com/files/team/1384088136127259400/recents-and-sharing/";
+          }
+          {
             name = "Git";
             url = "https://git-scm.com/docs/";
           }
@@ -122,6 +126,10 @@
           {
             name = "TypeScript";
             url = "https://www.typescriptlang.org/docs/";
+          }
+          {
+            name = "Angular";
+            url = "https://angular.dev/overview/";
           }
           {
             name = "Playwright";

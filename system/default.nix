@@ -51,7 +51,6 @@
       enable = true;
       defaultEditor = true;
     };
-    steam.enable = true;
   };
 
   services = {

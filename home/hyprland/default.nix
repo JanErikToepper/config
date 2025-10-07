@@ -32,9 +32,9 @@
       "bind" = [
         "$mainMod, return, exec, kitty"
         "$mainMod, escape, killactive"
-        "$mainMod, f, exec, $fileManager"
         "$mainMod, b, exec, $browser"
-        "$mainMod, s, exec, steam"
+        "$mainMod, f, exec, $fileManager"
+        "$mainMod, g, exec, gimp"
 
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
@@ -44,19 +44,19 @@
         "$mainMod, k, movefocus, u"
         "$mainMod, j, movefocus, d"
 
-        "$mainMod CTRL, h, movewindow, l"
-        "$mainMod CTRL, l, movewindow, r"
-        "$mainMod CTRL, k, movewindow, u"
-        "$mainMod CTRL, j, movewindow, d"
+        "$mainMod CTRL, h, swapwindow, l"
+        "$mainMod CTRL, l, swapwindow, r"
+        "$mainMod CTRL, k, swapwindow, u"
+        "$mainMod CTRL, j, swapwindow, d"
 
-        "$mainMod SHIFT, h, swapwindow, l"
-        "$mainMod SHIFT, l, swapwindow, r"
-        "$mainMod SHIFT, k, swapwindow, u"
-        "$mainMod SHIFT, j, swapwindow, d"
+        "$mainMod SHIFT, h, movewindow, l"
+        "$mainMod SHIFT, l, movewindow, r"
+        "$mainMod SHIFT, k, movewindow, u"
+        "$mainMod SHIFT, j, movewindow, d"
 
-        "$mainMod, g, togglegroup"
-        "$mainMod, n, changegroupactive, f"
-        "$mainMod, p, changegroupactive, b"
+        "$mainMod CTRL, g, togglegroup"
+        "$mainMod CTRL, n, changegroupactive, f"
+        "$mainMod CTRL, p, changegroupactive, b"
       ];
 
       "binde" = [
