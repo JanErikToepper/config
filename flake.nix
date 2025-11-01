@@ -2,7 +2,7 @@
   outputs = { ... } @ inputs:
     let
       work = {
-        enable = false;
+        enable = true;
         email = "";
       };
 
