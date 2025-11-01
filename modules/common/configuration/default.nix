@@ -1,16 +1,10 @@
-
 { ... } @ inputs: {
-  imports = [ ./hardware-configuration.nix ];
-
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
   };
 
-  networking = {
-    hostName = inputs.system.hostName;
-    networkmanager.enable = true;
-  };
+  networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Berlin";
 
@@ -29,7 +23,7 @@
     };
   };
 
-  console.keyMap = inputs.system.keyboardLayout;
+  console.keyMap = "de-latin1";
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
@@ -39,7 +33,10 @@
       WLR_NO_HARDWARE_CURSORS = "1";
       NIXOS_OZONE_WL = "1";
     };
-    systemPackages = map (package: inputs.core.pkgs.${ package }) inputs.system.packages;
+    systemPackages = with inputs.core.pkgs; [
+      vim
+      git
+    ];
   };
 
   programs = {
@@ -56,8 +53,8 @@
   services = {
     xserver = {
       xkb = {
-        layout = inputs.system.keyboardLayout;
-        variant = inputs.system.keyboardVariant;
+        layout = "de-latin1";
+        variant = "cherryblue";
       };
     };
     keyd = {
@@ -78,6 +75,7 @@
       enable = true;
       audio.enable = true;
     };
+    openssh.enable = true;
   };
 
   hardware = {
@@ -86,5 +84,32 @@
   };
 
   system.stateVersion = inputs.core.version;
+
+  users.mutableUsers = false;
+
+  users.users.toepper = {
+    isNormalUser = true;
+    hashedPassword = "$6$K6xoZ6UoJ.FNUlGQ$q1gy5/8UtyYh/.hvioRHmzLE9ZHSygfO93Nm0ptVAV4e3gSPOlo84gY970O1j2Yl7tpYD9RuLEhdPHQJEM3L31";
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    packages = with inputs.core.pkgs; [ 
+      nautilus
+      devenv
+      tmuxifier
+    ];
+  };
+  
+  nix.settings.trusted-users = [ "root" "toepper" ];
+
+  fonts.packages = with inputs.core.pkgs.nerd-fonts; [ fira-code ];
+
+  services.greetd = {
+    enable = true;
+    settings.default_session = {
+      command = "Hyprland";
+      user = "toepper";
+    };
+  };
+
+  virtualisation.docker.enable = true;
 }
 

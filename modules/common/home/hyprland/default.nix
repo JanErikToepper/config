@@ -1,6 +1,5 @@
 { lib, ... } @ inputs: {
   imports = [
-    ./plugins/hyprlock
     ./plugins/waybar
   ];
 
@@ -57,9 +56,7 @@
         "$mainMod CTRL, g, togglegroup"
         "$mainMod CTRL, n, changegroupactive, f"
         "$mainMod CTRL, p, changegroupactive, b"
-      ] ++ (lib.optionals (inputs.work.enable) [
-        "$mainMod, space, exec, hyprlock"
-      ]);
+      ];
 
       "binde" = [
         "$mainMod CTRL, 35, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"
@@ -67,9 +64,7 @@
         "$mainMod CTRL, m, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
       ];
 
-      "exec-once" = [ "waybar" ] ++ (lib.optionals (inputs.work.enable) [
-        "hyprlock"
-      ]);
+      "exec-once" = [ "waybar" ];
     };
   };
   

@@ -8,8 +8,8 @@
   ];
 
   home = {
-    username = inputs.user.name;
-    homeDirectory = "/home/${ inputs.user.name }";
+    username = "toepper";
+    homeDirectory = "/home/toepper";
     pointerCursor = {
       enable = true;
       name = "Hackneyed";

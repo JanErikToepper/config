@@ -1,8 +1,7 @@
 { ... } @ inputs: {
   programs.git = {
     enable = true;
-    userName = "Jan Erik Toepper";
-    userEmail = if inputs.work.enable then inputs.work.email else "tech.toepper@outlook.com";
+    userName = "Jan Erik Töpper";
     ignores = [
       ".devenv*"
       "devenv*"

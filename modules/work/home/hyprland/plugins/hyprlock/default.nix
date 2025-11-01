@@ -1,6 +1,6 @@
 { ... } @ inputs: {
   programs.hyprlock = {
-    enable = inputs.work.enable;
+    enable = true;
     settings = {
       general = {
         hide_cursor = true;

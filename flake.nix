@@ -1,63 +1,38 @@
 {
   outputs = { ... } @ inputs:
     let
-      work = {
-        enable = true;
-        email = "";
-      };
-
       core = rec {
-        nixpkgs = inputs.nixpkgs;
-        home-manager = inputs.home-manager;
-        pkgs = nixpkgs.legacyPackages.${ system.architecture };
         version = "25.05";
-        firefox-addons = inputs.firefox-addons.packages.${ system.architecture };
+        nixpkgs = inputs.nixpkgs;
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        home-manager = inputs.home-manager;
+        agenix = inputs.agenix;
+        firefox-addons = inputs.firefox-addons.packages.x86_64-linux;
         nixvim = inputs.nixvim;
       };
-
-      system = {
-        architecture = "x86_64-linux";
-        hostName = "toepper";
-
-        keyboardLayout = "de-latin1";
-        keyboardVariant = "cherryblue";
-
-        packages = [ "vim" "git" ];
-      };
-
-      user = {
-        name = "toepper";
-        hashedPassword = "$6$K6xoZ6UoJ.FNUlGQ$q1gy5/8UtyYh/.hvioRHmzLE9ZHSygfO93Nm0ptVAV4e3gSPOlo84gY970O1j2Yl7tpYD9RuLEhdPHQJEM3L31";
-        groups = [ "networkmanager" "wheel" "docker" ];
-        packages = [ "nautilus" "devenv" "tmuxifier" ];
-      };
-
-      args = {
-        inherit
-          work
-          core
-          system
-          user;
-      };
     in {
-      nixosConfigurations.${ system.hostName } = core.nixpkgs.lib.nixosSystem {
-        system = system.architecture;
-        modules = [
-          ./system
-          ./user
-          core.home-manager.nixosModules.home-manager {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              backupFileExtension = "hm-backup";
-              users.${ user.name } = import ./home;
-              extraSpecialArgs = args;
-            };
-          }
-        ];
-        specialArgs = args;
+      nixosConfigurations = builtins.listToAttrs
+        (map (module: {
+          name = module;
+          value = core.nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            modules = [
+              ./modules/common
+              (./modules + "/${module}")
+              inputs.agenix.nixosModules.default
+              core.home-manager.nixosModules.home-manager {
+                home-manager = {
+                  useGlobalPkgs = true;
+                  useUserPackages = true;
+                  backupFileExtension = "hm-backup";
+                  extraSpecialArgs = { inherit core; };
+                };
+              }
+            ];
+            specialArgs = { inherit core; };
+          };
+        }) [ "private" "work" ]);
       };
-    };
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-25.05";
@@ -66,6 +41,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland";
+    agenix.url = "github:ryantm/agenix";
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
     nixvim = {
       url = "github:nix-community/nixvim/nixos-25.05";
