@@ -8,10 +8,10 @@
   networking.wg-quick.interfaces.vpn = {
     privateKeyFile = config.age.secrets.vpn.path;
     address = [ "172.21.1.39/16" ];
-    dns = [
-      "94.100.132.153"
-      "94.100.132.154"
-    ];
+    # dns = [
+    #   "94.100.132.153"
+    #   "94.100.132.154"
+    # ];
     peers = [{
       publicKey = "YtvbC3jwQ7apC13V07SfbQGC+ZziJRmXXvR+4h5QFn0=";
       allowedIPs = [
