@@ -1,5 +1,6 @@
-{ ... } @ inputs: {
+{ lib, ... } @ inputs: {
   imports = [
+    ./plugins/hyprlock
     ./plugins/waybar
   ];
 
@@ -16,7 +17,7 @@
       "$fileManager" = "nautilus";
       "$browser" = "firefox";
 
-      "workspace" = [ "1, monitor:$monitorMain, persistent:true, default:true, on-created-empty:$terminal tmux" "2, monitor:$monitorLaptop, persistent:true, default:true, on-created-empty:firefox" ];
+      "workspace" = [ "1, monitor:$monitorMain, persistent:true, default:true, on-created-empty:$terminal tmux" "2, monitor:$monitorLaptop, persistent:true, default:false, on-created-empty:firefox" ];
 
       "animations" = import ./modules/animations.nix {};
       "cursor" = import ./modules/cursor.nix {};
@@ -33,8 +34,7 @@
         "$mainMod, return, exec, kitty"
         "$mainMod, escape, killactive"
         "$mainMod, b, exec, $browser"
-        "$mainMod, f, exec, $fileManager"
-        "$mainMod, g, exec, gimp"
+        "$mainMod, e, exec, $fileManager"
 
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
@@ -57,7 +57,9 @@
         "$mainMod CTRL, g, togglegroup"
         "$mainMod CTRL, n, changegroupactive, f"
         "$mainMod CTRL, p, changegroupactive, b"
-      ];
+      ] ++ (lib.optionals (inputs.work.enable) [
+        "$mainMod, space, exec, hyprlock"
+      ]);
 
       "binde" = [
         "$mainMod CTRL, 35, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"
@@ -65,11 +67,11 @@
         "$mainMod CTRL, m, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
       ];
 
-      "exec-once" = [ "waybar" ];
+      "exec-once" = [ "waybar" ] ++ (lib.optionals (inputs.work.enable) [
+        "hyprlock"
+      ]);
     };
-    plugins = with inputs.core.hyprland-plugins; [];
   };
-
   
   programs.kitty.enable = true;
 }

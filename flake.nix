@@ -1,12 +1,16 @@
 {
   outputs = { ... } @ inputs:
     let
+      work = {
+        enable = false;
+        email = "";
+      };
+
       core = rec {
         nixpkgs = inputs.nixpkgs;
         home-manager = inputs.home-manager;
         pkgs = nixpkgs.legacyPackages.${ system.architecture };
         version = "25.05";
-        hyprland-plugins = inputs.hyprland-plugins.packages.${ system.architecture };
         firefox-addons = inputs.firefox-addons.packages.${ system.architecture };
         nixvim = inputs.nixvim;
       };
@@ -14,11 +18,6 @@
       system = {
         architecture = "x86_64-linux";
         hostName = "toepper";
-
-        timeZone = "Europe/Berlin";
-
-        defaultLocale = "en_US.UTF-8";
-        extraLocale = "de_DE.UTF-8";
 
         keyboardLayout = "de-latin1";
         keyboardVariant = "cherryblue";
@@ -30,11 +29,12 @@
         name = "toepper";
         hashedPassword = "$6$K6xoZ6UoJ.FNUlGQ$q1gy5/8UtyYh/.hvioRHmzLE9ZHSygfO93Nm0ptVAV4e3gSPOlo84gY970O1j2Yl7tpYD9RuLEhdPHQJEM3L31";
         groups = [ "networkmanager" "wheel" "docker" ];
-        packages = [ "nautilus" "devenv" "tmuxifier" "gimp" ];
+        packages = [ "nautilus" "devenv" "tmuxifier" ];
       };
 
       args = {
         inherit
+          work
           core
           system
           user;
@@ -66,10 +66,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
     nixvim = {
       url = "github:nix-community/nixvim/nixos-25.05";

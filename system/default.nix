@@ -12,20 +12,20 @@
     networkmanager.enable = true;
   };
 
-  time.timeZone = inputs.system.timeZone;
+  time.timeZone = "Europe/Berlin";
 
   i18n = {
-    defaultLocale = inputs.system.defaultLocale;
+    defaultLocale = "en_US.UTF-8";
     extraLocaleSettings = {
-      LC_ADDRESS = inputs.system.extraLocale;
-      LC_IDENTIFICATION = inputs.system.extraLocale;
-      LC_MEASUREMENT = inputs.system.extraLocale;
-      LC_MONETARY = inputs.system.extraLocale;
-      LC_NAME = inputs.system.extraLocale;
-      LC_NUMERIC = inputs.system.extraLocale;
-      LC_PAPER = inputs.system.extraLocale;
-      LC_TELEPHONE = inputs.system.extraLocale;
-      LC_TIME = inputs.system.extraLocale;
+      LC_ADDRESS = "de_DE.UTF-8";
+      LC_IDENTIFICATION = "de_DE.UTF-8";
+      LC_MEASUREMENT = "de_DE.UTF-8";
+      LC_MONETARY = "de_DE.UTF-8";
+      LC_NAME = "de_DE.UTF-8";
+      LC_NUMERIC = "de_DE.UTF-8";
+      LC_PAPER = "de_DE.UTF-8";
+      LC_TELEPHONE = "de_DE.UTF-8";
+      LC_TIME = "de_DE.UTF-8";
     };
   };
 

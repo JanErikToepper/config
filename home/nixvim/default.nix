@@ -21,7 +21,6 @@
         gcc.enable = true;
       };
     };
-    fd.enable = true;
-    ripgrep.enable = true;
   };
 }
+

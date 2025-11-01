@@ -9,12 +9,20 @@
       action = "<cmd>LspRestart<cr>";
     }
     {
+      key = "<leader>db";
+      action = "<cmd>AdvancedGitSearch diff_branch_file<cr>";
+    }
+    {
       key = "<leader>dk";
       action = "<cmd>lua vim.diagnostic.open_float()<cr>";
     }
     {
       key = "<leader>e";
-      action = "<cmd>Explore<cr>";
+      action = "<cmd>Oil<cr>";
+    }
+    {
+      key = "<leader>E";
+      action = "<cmd>lua require('oil.actions').open_cwd.callback()<cr>";
     }
     {
       key = "<leader>ff";
@@ -29,16 +37,16 @@
       action = "<cmd>lua require('telescope.builtin').help_tags()<cr>";
     }
     {
+      key = "<leader>fm"; 
+      action = "<cmd>AdvancedGitSearch changed_on_branch<cr>";
+    }
+    {
       key = "<leader>gb";
       action = "<cmd>lua require('telescope.builtin').git_branches()<cr>";
     }
     {
       key = "<leader>gc";
       action = "<cmd>lua require('neogit.lib.git.status').stage_all(); require('neogit').action('commit', 'commit')()<cr>";
-    }
-    {
-      key = "<leader>gd";
-      action = "<cmd>AdvancedGitSearch diff_branch_file<cr>";
     }
     {
       key = "<leader>gl";

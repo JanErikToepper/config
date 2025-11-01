@@ -2,12 +2,10 @@
   programs.git = {
     enable = true;
     userName = "Jan Erik Toepper";
-    userEmail = "tech.toepper@outlook.com";
+    userEmail = if inputs.work.enable then inputs.work.email else "tech.toepper@outlook.com";
     ignores = [
-      ".devenv"
-      ".env"
-      "dist"
-      "node_modules"
+      ".devenv*"
+      "devenv*"
     ];
     extraConfig = {
       branch.sort = "-committerdate";

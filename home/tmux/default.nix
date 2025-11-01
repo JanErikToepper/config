@@ -29,6 +29,7 @@
         bind-key W swap-window -t -1\; select-window -t -1
 
         bind-key c new-window -c "#{pane_current_path}"
+        bind-key C new-session -c "#{pane_current_path}"
 
         bind-key V splitw -h -c "#{pane_current_path}" 
         bind-key H splitw -v -c "#{pane_current_path}"

@@ -17,11 +17,10 @@ local function branch_name()
 end
 
 function _G.status_line()
-	return " "
-		.. branch_name()
+	return branch_name()
 end
 
-vim.opt.statusline = "%{%v:lua.status_line()%}"
+vim.opt.statusline = "[%{%v:lua.status_line()%}] %f"
   '';
 }
 

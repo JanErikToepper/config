@@ -100,16 +100,12 @@
         force = true;
         settings = [
           {
+            name = "Angular";
+            url = "https://angular.dev/overview/";
+          }
+          {
             name = "Bitwarden";
             url = "https://vault.bitwarden.com/#/vault/";
-          }
-          {
-            name = "Outlook";
-            url = outlookUrl;
-          }
-          {
-            name = "Github";
-            url = "https://github.com/JanErikToepper/";
           }
           {
             name = "Figma";
@@ -120,20 +116,28 @@
             url = "https://git-scm.com/docs/";
           }
           {
+            name = "Github";
+            url = "https://github.com/JanErikToepper/";
+          }
+          {
+            name = "Localhost";
+            url = "http://localhost:4200/";
+          }
+          {
             name = "MDN";
             url = "https://developer.mozilla.org/";
           }
           {
-            name = "TypeScript";
-            url = "https://www.typescriptlang.org/docs/";
-          }
-          {
-            name = "Angular";
-            url = "https://angular.dev/overview/";
+            name = "Outlook";
+            url = outlookUrl;
           }
           {
             name = "Playwright";
             url = "https://playwright.dev/docs/intro/";
+          }
+          {
+            name = "TypeScript";
+            url = "https://www.typescriptlang.org/docs/";
           }
         ];
       };
