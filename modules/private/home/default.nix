@@ -1,4 +1,6 @@
 { ... } @ inputs: {
-  
+  imports = [
+    ./firefox
+  ];  
 }
 
