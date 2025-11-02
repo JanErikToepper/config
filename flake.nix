@@ -6,7 +6,6 @@
         nixpkgs = inputs.nixpkgs;
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         home-manager = inputs.home-manager;
-        agenix = inputs.agenix;
         firefox-addons = inputs.firefox-addons.packages.x86_64-linux;
         nixvim = inputs.nixvim;
       };
@@ -19,7 +18,6 @@
             modules = [
               ./modules/common
               (./modules + "/${module}")
-              inputs.agenix.nixosModules.default
               core.home-manager.nixosModules.home-manager {
                 home-manager = {
                   useGlobalPkgs = true;
@@ -41,7 +39,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland";
-    agenix.url = "github:ryantm/agenix";
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
     nixvim = {
       url = "github:nix-community/nixvim/nixos-25.05";

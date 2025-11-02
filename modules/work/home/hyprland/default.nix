@@ -5,10 +5,6 @@
     "bind" = [
       "$mainMod, space, exec, hyprlock"
     ];
-
-    "exec-once" = [
-      "hyprlock"
-    ];
   };
 }
 
