@@ -50,11 +50,6 @@
           };
         };
       };
-      Homepage = {
-        URL = "https://vault.bitwarden.com/#/vault/";
-        Locked = true;
-        StartPage = "homepage-locked";
-      };
       ManualAppUpdateOnly = true;
       NetworkPredicton = true;
       OfferToSaveLogins = false;
@@ -106,10 +101,6 @@
           {
             name = "Bitwarden";
             url = "https://vault.bitwarden.com/#/vault/";
-          }
-          {
-            name = "Figma";
-            url = "https://www.figma.com/files/team/1384088136127259400/recents-and-sharing/";
           }
           {
             name = "Git";
