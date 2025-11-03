@@ -29,6 +29,7 @@
           ".angular"
           ".devenv"
           ".git"
+          "build"
           "dist"
           "node_modules/"
           "package-lock.json"

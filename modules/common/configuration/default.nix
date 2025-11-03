@@ -36,6 +36,12 @@
     systemPackages = with inputs.core.pkgs; [
       vim
       git
+      unzip
+      hyprshot
+      jq
+      grim
+      slurp
+      wl-clipboard
     ];
   };
 

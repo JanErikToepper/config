@@ -20,7 +20,7 @@ function _G.status_line()
 	return branch_name()
 end
 
-vim.opt.statusline = "[%{%v:lua.status_line()%}] %f"
+vim.opt.statusline = "%f   %=   %{%v:lua.status_line()%}"
   '';
 }
 

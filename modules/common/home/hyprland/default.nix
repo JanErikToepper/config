@@ -1,22 +1,14 @@
 { lib, ... } @ inputs: {
-  imports = [
-    ./plugins/waybar
-  ];
+  imports = [ ./plugins ];
 
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       "$borderColor" = "0xffffffff";
-      "$monitorMain" = "HDMI-A-1";
-      "$monitorLaptop" = "eDP-1";
-
-      "monitor" = [ "$monitorMain, 1920x1080, 0x0, 1" "$monitorLaptop, 1920x1080, 1920x0, 1.5" ];
 
       "$terminal" = "kitty";
       "$fileManager" = "nautilus";
       "$browser" = "firefox";
-
-      "workspace" = [ "1, monitor:$monitorMain, persistent:true, default:true, on-created-empty:$terminal tmux" "2, monitor:$monitorLaptop, persistent:true, default:false, on-created-empty:firefox" ];
 
       "animations" = import ./modules/animations.nix {};
       "cursor" = import ./modules/cursor.nix {};
@@ -34,9 +26,11 @@
         "$mainMod, escape, killactive"
         "$mainMod, b, exec, $browser"
         "$mainMod, e, exec, $fileManager"
+        "$mainMod, s, exec, hyprshot -m window -m active -z -s --clipboard-only"
 
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
+        "$mainMod, 3, workspace, 3"
 
         "$mainMod, h, movefocus, l"
         "$mainMod, l, movefocus, r"

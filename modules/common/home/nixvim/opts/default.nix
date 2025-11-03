@@ -5,7 +5,6 @@
     autowriteall = true;
     background = "dark";
     backup = false;
-    breakindent = true;
     clipboard = "unnamedplus";
     complete = "";
     expandtab = true;
@@ -22,8 +21,7 @@
     redrawtime = 10000;
     relativenumber = true;
     scrolloff = 999;
-    shiftwidth = 2;
-    showbreak = ">";
+    shiftwidth = 4;
     showmatch = true;
     sidescrolloff = 10;
     signcolumn = "yes";
@@ -35,7 +33,7 @@
     statusline = "%f";
     swapfile = false;
     synmaxcol = 300;
-    tabstop = 2;
+    tabstop = 4;
     ttimeoutlen = 0;
     undofile = true;
     updatetime = 300;

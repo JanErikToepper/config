@@ -5,6 +5,9 @@
     ignores = [
       ".devenv*"
       "devenv*"
+      ".direnv"
+      ".envrc"
+      ".pre-commit-config.yaml"
     ];
     extraConfig = {
       branch.sort = "-committerdate";

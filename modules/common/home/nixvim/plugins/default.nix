@@ -7,6 +7,7 @@
     ./neogit
     ./oil
     ./telescope
+    ./treesitter
   ];
 
   programs.nixvim = {
@@ -14,7 +15,6 @@
       autoclose.enable = true;
       lspconfig.enable = true;
       tmux-navigator.enable = true;
-      treesitter.enable = true;
       ts-autotag.enable = true;
       web-devicons.enable = true;
     };

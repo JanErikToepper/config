@@ -13,8 +13,12 @@
       action = "<cmd>AdvancedGitSearch diff_branch_file<cr>";
     }
     {
-      key = "<leader>dk";
-      action = "<cmd>lua vim.diagnostic.open_float()<cr>";
+      key = "<leader>do";
+      action = "<cmd>DiffviewOpen<cr>";
+    }
+    {
+      key = "<leader>dq";
+      action = "<cmd>DiffviewClose<cr>";
     }
     {
       key = "<leader>e";
@@ -38,7 +42,7 @@
     }
     {
       key = "<leader>fm"; 
-      action = "<cmd>AdvancedGitSearch changed_on_branch<cr>";
+      action = "<cmd>lua require('telescope.builtin').man_pages()<cr>";
     }
     {
       key = "<leader>gb";
@@ -79,6 +83,10 @@
     {
       key = "<leader>ghr";
       action = "<cmd>Gitsigns reset_hunk<cr>";
+    }
+    {
+      key = "<leader>k";
+      action = "<cmd>lua vim.diagnostic.open_float()<cr>";
     }
   ];
 }

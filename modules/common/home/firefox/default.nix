@@ -1,7 +1,4 @@
-{ ... } @ inputs:
-  let
-    outlookUrl = "https://outlook.live.com/mail/0";
-  in {
+{ ... } @ inputs: {
   programs.firefox = {
     enable = true;
     languagePacks = [ "en-US" ];
@@ -43,10 +40,6 @@
           mailTo = {
             action = "useHelperApp";
             ask = false;
-            handlers = [{
-              name = "Outlook";
-              urlTemplate = outlookUrl;
-            }];
           };
         };
       };
@@ -99,16 +92,8 @@
             url = "https://angular.dev/overview/";
           }
           {
-            name = "Bitwarden";
-            url = "https://vault.bitwarden.com/#/vault/";
-          }
-          {
             name = "Git";
             url = "https://git-scm.com/docs/";
-          }
-          {
-            name = "Github";
-            url = "https://github.com/JanErikToepper/";
           }
           {
             name = "Localhost";
@@ -117,10 +102,6 @@
           {
             name = "MDN";
             url = "https://developer.mozilla.org/";
-          }
-          {
-            name = "Outlook";
-            url = outlookUrl;
           }
           {
             name = "Playwright";
