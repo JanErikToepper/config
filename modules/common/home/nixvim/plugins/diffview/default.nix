@@ -1,27 +1,46 @@
 { ... } @ inputs: {
   programs.nixvim.plugins.diffview = {
     enable = true;
+    diffBinaries = true;
+    enhancedDiffHl = true;
+    showHelpHints = false;
+    filePanel = {
+      treeOptions.folderStatuses = "never";
+      winConfig.width = 50;
+    };
     keymaps = {
       view = [
         {
           mode = "n";
-          key = "<c-p>";
+          key = "<leader>p";
           action = "[c";
         }
         {
           mode = "n";
-          key = "<c-n>";
+          key = "<leader>n";
           action = "]c";
         }
         {
           mode = "n";
-          key = "<c-P>";
+          key = "<leader>P";
           action = "<cmd>lua require('diffview.actions').next_conflict()<cr>";
         }
         {
           mode = "n";
-          key = "<c-N>";
+          key = "<leader>N";
           action = "<cmd>lua require('diffview.actions').prev_conflict()<cr>";
+        }
+      ];
+      filePanel = [
+        {
+          mode = "n";
+          key = "<c-L>";
+          action = "<C-W>>";
+        }
+        {
+          mode = "n";
+          key = "<c-H>";
+          action = "<C-W><";
         }
       ];
     };

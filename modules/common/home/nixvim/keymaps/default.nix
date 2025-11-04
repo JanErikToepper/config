@@ -13,6 +13,10 @@
       action = "<cmd>AdvancedGitSearch diff_branch_file<cr>";
     }
     {
+      key = "<leader>dk";
+      action = "<cmd>lua vim.diagnostic.open_float()<cr>";
+    }
+    {
       key = "<leader>dn";
       action = "<cmd>lua vim.diagnostic.goto_next()<cr>";
     }
@@ -81,16 +85,16 @@
       action = "<cmd>lua require('neogit').action('rebase', 'abort')()<cr>";
     }
     {
+      key = "<leader>grb";
+      action = "<cmd>lua require('neogit').action('rebase', 'onto_elsewhere', { '--autostash' })()<cr>";
+    }
+    {
       key = "<leader>grc";
-      action = "<cmd>lua require('neogit').action('rebase', 'continue')()<cr>";
+      action = "<cmd>lua require('neogit.lib.git.status').stage_all(); require('neogit').action('rebase', 'continue')()<cr>";
     }
     {
       key = "<leader>gri";
       action = "<cmd>lua require('neogit').action('rebase', 'interactively', { '--autostash' })()<cr>";
-    }
-    {
-      key = "<leader>grb";
-      action = "<cmd>lua require('neogit').action('rebase', 'onto_elsewhere', { '--autostash' })()<cr>";
     }
     {
       key = "<leader>ghp";
@@ -99,10 +103,6 @@
     {
       key = "<leader>ghr";
       action = "<cmd>Gitsigns reset_hunk<cr>";
-    }
-    {
-      key = "<leader>k";
-      action = "<cmd>lua vim.diagnostic.open_float()<cr>";
     }
   ];
 }

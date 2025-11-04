@@ -1,7 +1,9 @@
 { ... } @ inputs: {
-  programs.nixvim.colorschemes.vscode = {
+  programs.nixvim.colorschemes.catppuccin = {
     enable = true;
-    settings.transparent = true;
+    settings = {
+      flavour = "mocha";
+    };
   };
 }
 
