@@ -55,6 +55,10 @@ in {
         url = "https://pyxis.vadesecure.com/latest/components/components-overview-5QsSkdUr/";
       }
       {
+        name = "Pyxis - Storybook";
+        url = "http://pyxis.pages.internal.vadesecure.io/pyxis/angular/";
+      }
+      {
         name = "Cptest 2";
         url = "https://cptest2.hornetsecurity.com/";
       }
