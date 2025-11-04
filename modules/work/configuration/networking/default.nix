@@ -1,5 +1,4 @@
 { config, ... } @ inputs: {
-  age.secrets.hse-corporate.file = ../../secrets/hse-corporate.age;
   networking = {
     hostName = "toepper";
     networkmanager.ensureProfiles = {

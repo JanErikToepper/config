@@ -13,6 +13,10 @@
       action = "<cmd>AdvancedGitSearch diff_branch_file<cr>";
     }
     {
+      key = "<leader>dl";
+      action = "<cmd>lua require('telescope.builtin').diagnostics({bufnr=0})<cr>";
+    }
+    {
       key = "<leader>do";
       action = "<cmd>DiffviewOpen<cr>";
     }
@@ -67,6 +71,14 @@
     {
       key = "<leader>gs";
       action = "<cmd>Neogit<cr>";
+    }
+    {
+      key = "<leader>gra";
+      action = "<cmd>lua require('neogit').action('rebase', 'abort')()<cr>";
+    }
+    {
+      key = "<leader>grc";
+      action = "<cmd>lua require('neogit').action('rebase', 'continue')()<cr>";
     }
     {
       key = "<leader>gri";
