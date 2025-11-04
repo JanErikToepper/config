@@ -52,7 +52,7 @@ in {
       }
       {
         name = "Pyxis - Design system";
-        url = "https://gitlabdev.internal.hornetsecurity.com/";
+        url = "https://pyxis.vadesecure.com/latest/components/components-overview-5QsSkdUr/";
       }
       {
         name = "Cptest 2";

@@ -104,6 +104,14 @@
       key = "<leader>ghr";
       action = "<cmd>Gitsigns reset_hunk<cr>";
     }
+    {
+      key = "<leader>gxs";
+      action = "<cmd>lua require('neogit.lib.git.reset').soft('HEAD~1')<cr>";
+    }
+    {
+      key = "<leader>gxh";
+      action = "<cmd>lua require('neogit.lib.git.status').stage_all(); require('neogit.lib.git.reset').hard()<cr>";
+    }
   ];
 }
 

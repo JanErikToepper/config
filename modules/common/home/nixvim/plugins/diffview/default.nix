@@ -34,13 +34,8 @@
       filePanel = [
         {
           mode = "n";
-          key = "<c-L>";
+          key = "<c-w>";
           action = "<C-W>>";
-        }
-        {
-          mode = "n";
-          key = "<c-H>";
-          action = "<C-W><";
         }
       ];
     };
