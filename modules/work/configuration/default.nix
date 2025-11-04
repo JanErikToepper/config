@@ -1,7 +1,10 @@
 { config, ... } @ inputs: {
-  networking = {
-    hostName = "toepper";
-    wg-quick.interfaces.vpn.configFile = "/etc/wireguard/toepper-vpn-hz1.conf"; 
-  };
+  imports = [
+    ./networking
+  ];
+
+  environment.systemPackages = [
+    inputs.core.agenix.packages.x86_64-linux.default
+  ];
 }
 

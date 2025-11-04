@@ -13,9 +13,9 @@
     ];
 
     "workspace" = [
-      "1, monitor:$monitorExtra, persistent:true, default:false, on-created-empty:firefox"
+      "1, monitor:$monitorExtra, persistent:true, default:true, on-created-empty:firefox --new-window"
       "2, monitor:$monitorMain, persistent:true, default:true, on-created-empty:$terminal tmux"
-      "3, monitor:$monitorLaptop, persistent:true, default:false, on-created-empty:firefox https://teams.microsoft.com/v2/"
+      "3, monitor:$monitorLaptop, persistent:true, default:true, on-created-empty:firefox --new-window https://teams.microsoft.com/v2/"
     ];
 
     "bind" = [
