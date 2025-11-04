@@ -13,12 +13,16 @@
       action = "<cmd>AdvancedGitSearch diff_branch_file<cr>";
     }
     {
-      key = "<leader>dl";
-      action = "<cmd>lua require('telescope.builtin').diagnostics({bufnr=0})<cr>";
+      key = "<leader>dn";
+      action = "<cmd>lua vim.diagnostic.goto_next()<cr>";
     }
     {
       key = "<leader>do";
       action = "<cmd>DiffviewOpen<cr>";
+    }
+    {
+      key = "<leader>dp";
+      action = "<cmd>lua vim.diagnostic.goto_prev()<cr>";
     }
     {
       key = "<leader>dq";
