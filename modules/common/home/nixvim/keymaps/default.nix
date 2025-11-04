@@ -65,6 +65,10 @@
       action = "<cmd>lua require('neogit.lib.git.status').stage_all(); require('neogit').action('commit', 'commit')()<cr>";
     }
     {
+      key = "<leader>gk";
+      action = "<cmd>Gitsigns preview_hunk_inline<cr>";
+    }
+    {
       key = "<leader>gl";
       action = "<cmd>lua require('neogit').action('log', 'log_current')()<cr>";
     }
@@ -97,10 +101,6 @@
       action = "<cmd>lua require('neogit').action('rebase', 'interactively', { '--autostash' })()<cr>";
     }
     {
-      key = "<leader>ghp";
-      action = "<cmd>Gitsigns preview_hunk_inline<cr>";
-    }
-    {
       key = "<leader>ghr";
       action = "<cmd>Gitsigns reset_hunk<cr>";
     }
@@ -111,6 +111,22 @@
     {
       key = "<leader>gxh";
       action = "<cmd>lua require('neogit.lib.git.status').stage_all(); require('neogit.lib.git.reset').hard()<cr>";
+    }
+    {
+      key = "<leader>n";
+      action = "<cmd>Gitsigns nav_hunk next<cr>";
+    }
+    {
+      key = "<leader>p";
+      action = "<cmd>Gitsigns nav_hunk prev<cr>";
+    }
+    {
+      key = "<leader>t";
+      action = "<cmd>tabn<cr>";
+    }
+    {
+      key = "<leader>T";
+      action = "<cmd>tabp<cr>";
     }
   ];
 }
