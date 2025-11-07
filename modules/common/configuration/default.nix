@@ -85,6 +85,7 @@
   };
 
   hardware = {
+    bluetooth.enable = true;
     graphics.enable = true;
     nvidia.modesetting.enable = true;
   };
@@ -99,8 +100,9 @@
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with inputs.core.pkgs; [ 
       nautilus
-      devenv
       tmuxifier
+      devenv
+      nodePackages.prettier
     ];
   };
   

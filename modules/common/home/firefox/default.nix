@@ -111,6 +111,10 @@
             name = "TypeScript";
             url = "https://www.typescriptlang.org/docs/";
           }
+          {
+            name = "NGRX";
+            url = "https://ngrx.io/docs/";
+          }
         ];
       };
 

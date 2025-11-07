@@ -51,7 +51,7 @@ in {
         url = "https://gitlabdev.internal.hornetsecurity.com/";
       }
       {
-        name = "Pyxis - Design system";
+        name = "Pyxis - Design System";
         url = "https://pyxis.vadesecure.com/latest/components/components-overview-5QsSkdUr/";
       }
       {
@@ -61,6 +61,10 @@ in {
       {
         name = "Cptest 2";
         url = "https://cptest2.hornetsecurity.com/";
+      }
+      {
+        name = "SE - Help Center";
+        url = "https://hornetsecurity.atlassian.net/servicedesk/customer/portals/";
       }
     ];
   };

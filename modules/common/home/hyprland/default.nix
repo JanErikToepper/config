@@ -63,5 +63,7 @@
   };
   
   programs.kitty.enable = true;
+
+  services.mako.enable = true;
 }
 

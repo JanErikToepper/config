@@ -35,7 +35,7 @@
       html.enable = true;
       jsonls.enable = true;
       lua_ls.enable = true;
-      tailwindcss.enable = true;
+      tailwindcss.enable = false;
       ts_ls.enable = true;
     };
   };
