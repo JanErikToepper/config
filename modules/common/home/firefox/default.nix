@@ -115,6 +115,18 @@
             name = "NGRX";
             url = "https://ngrx.io/docs/";
           }
+          {
+            name = "MSW";
+            url = "https://mswjs.io/docs/";
+          }
+          {
+            name = "MSW data";
+            url = "https://github.com/mswjs/data/";
+          }
+          {
+            name = "Faker";
+            url = "https://fakerjs.dev/api/";
+          }
         ];
       };
 

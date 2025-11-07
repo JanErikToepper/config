@@ -3,10 +3,6 @@
     nixvim.plugins.telescope = {
       enable = true;
       extensions = {
-        advanced-git-search = {
-          enable = true;
-          settings.diff_plugin = "diffview";
-        };
         frecency.enable = true;
         fzf-native.enable = true;
       };

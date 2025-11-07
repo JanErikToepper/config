@@ -2,7 +2,6 @@
   programs.nixvim.opts = {
     autoindent = true;
     autoread = true;
-    autowriteall = true;
     background = "dark";
     backup = false;
     clipboard = "unnamedplus";

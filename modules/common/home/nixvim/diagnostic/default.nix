@@ -2,9 +2,7 @@
   func = inputs.config.lib.nixvim.mkRaw;
 in {
   programs.nixvim.diagnostic.settings = {
-    virtual_text = {
-      spacing = 1;
-    };
+    virtual_text.spacing = 1;
     signs = false;
     float = {
       scope = "c";

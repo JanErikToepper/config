@@ -5,6 +5,7 @@
     ./diffview
     ./gitsigns
     ./neogit
+    ./none-ls
     ./oil
     ./telescope
     ./treesitter

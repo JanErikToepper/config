@@ -102,7 +102,7 @@
       nautilus
       tmuxifier
       devenv
-      nodePackages.prettier
+      prettierd
     ];
   };
   

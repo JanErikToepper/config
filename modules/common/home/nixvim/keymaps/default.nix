@@ -12,11 +12,6 @@
     }
     {
       mode = "n";
-      key = "<leader>db";
-      action = "<cmd>AdvancedGitSearch diff_branch_file<cr>";
-    }
-    {
-      mode = "n";
       key = "<leader>dk";
       action = "<cmd>lua vim.diagnostic.open_float()<cr>";
     }
@@ -73,7 +68,7 @@
     {
       mode = "n";
       key = "<leader>ga";
-      action = "<cmd>lua require('neogit.lib.git.status').stage_all(); local v = io.popen('prettier --write $(git diff --cached --name-only --diff-filter d)') v:read('*all') v:close(); vim.cmd('checktime'); require('neogit').action('commit', 'amend', { '--all' })()<cr>";
+      action = "<cmd>lua require('neogit.lib.git.status').stage_all(); require('neogit').action('commit', 'amend')()<cr>";
     }
     {
       mode = "n";
@@ -83,7 +78,7 @@
     {
       mode = "n";
       key = "<leader>gc";
-      action = "<cmd>lua require('neogit.lib.git.status').stage_all(); local v = io.popen('prettier --write $(git diff --cached --name-only --diff-filter d)') v:read('*all') v:close(); vim.cmd('checktime'); require('neogit').action('commit', 'commit', { '--all' })()<cr>";
+      action = "<cmd>lua require('neogit.lib.git.status').stage_all(); require('neogit').action('commit', 'commit')()<cr>";
     }
     {
       mode = "n";
@@ -143,7 +138,7 @@
     {
       mode = "n";
       key = "<leader>gxh";
-      action = "<cmd>lua require('neogit.lib.git.status').stage_all(); require('neogit.lib.git.reset').hard(); vim.cmd('checktime')<cr>";
+      action = "<cmd>lua require('neogit.lib.git.status').stage_all(); require('neogit.lib.git.reset').hard()<cr>";
     }
     {
       mode = "n";

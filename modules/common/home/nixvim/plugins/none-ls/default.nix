@@ -1,0 +1,7 @@
+{ ... } @ inputs: {
+  programs.nixvim.plugins.none-ls = {
+    enable = true;
+    sources.formatting.prettierd.enable = true;
+  };
+}
+
