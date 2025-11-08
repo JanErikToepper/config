@@ -10,10 +10,6 @@
         lspBufAction = "definition";
       }
       {
-        key = "gD";
-        lspBufAction = "references";
-      }
-      {
         key = "gr";
         lspBufAction = "rename";
       }

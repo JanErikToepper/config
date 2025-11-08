@@ -11,7 +11,7 @@ in {
       Handler.schemes.mailTo.handlers = [{
         name = "Outlook";
         urlTemplate = outlookUrl;
-      });
+      }];
     };
     profiles.toepper.bookmarks.settings = [
       {

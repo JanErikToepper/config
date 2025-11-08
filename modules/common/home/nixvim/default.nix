@@ -4,6 +4,7 @@
     ./autocmd
     ./colorschemes
     ./diagnostic
+    ./editorconfig
     ./globals
     ./keymaps
     ./lsp
@@ -12,14 +13,12 @@
     ./plugins
   ];
 
-  programs = {
-    nixvim = {
-      enable = true;
+  programs.nixvim = {
+    enable = true;
 
-      dependencies = {
-        tree-sitter.enable = true;
-        gcc.enable = true;
-      };
+    dependencies = {
+      tree-sitter.enable = true;
+      gcc.enable = true;
     };
   };
 }
