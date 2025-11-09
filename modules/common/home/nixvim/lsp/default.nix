@@ -6,16 +6,8 @@
         lspBufAction = "code_action";
       }
       {
-        key = "gd";
-        lspBufAction = "definition";
-      }
-      {
         key = "gr";
         lspBufAction = "rename";
-      }
-      {
-        key = "gt";
-        lspBufAction = "type_definition";
       }
       {
         key = "K";

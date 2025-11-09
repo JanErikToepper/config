@@ -2,6 +2,16 @@
   programs.nixvim.keymaps = [
     {
       mode = "n";
+      key = "gd";
+      action = "<cmd>lua require('telescope.builtin').lsp_definitions()<cr>";
+    }
+    {
+      mode = "n";
+      key = "gD";
+      action = "<cmd>lua require('telescope.builtin').lsp_references()<cr>";
+    }
+    {
+      mode = "n";
       key = "gi";
       action = "<cmd>lua vim.lsp.buf.code_action({ filter = function(x) return x.kind == 'quickfix' and string.match(x.title, 'import') end, apply = true, })<cr>";
     }
@@ -9,6 +19,11 @@
       mode = "n";
       key = "gl";
       action = "<cmd>LspRestart<cr>";
+    }
+    {
+      mode = "n";
+      key = "gt";
+      action = "<cmd>lua require('telescope.builtin').lsp_type_definitions()<cr>";
     }
     {
       mode = "n";
@@ -143,7 +158,7 @@
     {
       mode = "n";
       key = "<leader>gxh";
-      action = "<cmd>lua require('neogit.lib.git.status').stage_all(); require('neogit.lib.git.reset').hard()<cr>";
+      action = "<cmd>lua require('neogit.lib.git.status').stage_all(); require('neogit.lib.git.cli').reset.hard.args(require('neogit.lib.git.branch').current()).call(); vim.cmd('checktime')<cr>";
     }
     {
       mode = "n";
