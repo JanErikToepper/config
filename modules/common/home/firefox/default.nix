@@ -104,8 +104,8 @@
             url = "https://developer.mozilla.org/";
           }
           {
-            name = "Playwright";
-            url = "https://playwright.dev/docs/intro/";
+            name = "Tailwind";
+            url = "https://tailwindcss.com/docs/";
           }
           {
             name = "TypeScript";
@@ -126,6 +126,10 @@
           {
             name = "Faker";
             url = "https://fakerjs.dev/api/";
+          }
+          {
+            name = "Playwright";
+            url = "https://playwright.dev/docs/";
           }
         ];
       };

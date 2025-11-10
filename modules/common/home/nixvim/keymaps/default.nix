@@ -2,11 +2,6 @@
   programs.nixvim.keymaps = [
     {
       mode = "n";
-      key = "gd";
-      action = "<cmd>lua require('telescope.builtin').lsp_definitions()<cr>";
-    }
-    {
-      mode = "n";
       key = "gD";
       action = "<cmd>lua require('telescope.builtin').lsp_references()<cr>";
     }
@@ -19,11 +14,6 @@
       mode = "n";
       key = "gl";
       action = "<cmd>LspRestart<cr>";
-    }
-    {
-      mode = "n";
-      key = "gt";
-      action = "<cmd>lua require('telescope.builtin').lsp_type_definitions()<cr>";
     }
     {
       mode = "n";
@@ -59,6 +49,11 @@
       mode = "n";
       key = "<leader>E";
       action = "<cmd>lua require('oil.actions').open_cwd.callback()<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>fc";
+      action = "<cmd>lua require('telescope.builtin').git_status()<cr>";
     }
     {
       mode = "n";

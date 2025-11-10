@@ -6,8 +6,16 @@
         lspBufAction = "code_action";
       }
       {
+        key = "gd";
+        lspBufAction = "definition";
+      }
+      {
         key = "gr";
         lspBufAction = "rename";
+      }
+      {
+        key = "gt";
+        lspBufAction = "type_definition";
       }
       {
         key = "K";
@@ -23,7 +31,7 @@
       html.enable = true;
       jsonls.enable = true;
       lua_ls.enable = true;
-      tailwindcss.enable = false;
+      tailwindcss.enable = true;
       ts_ls.enable = true;
     };
   };
