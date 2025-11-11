@@ -104,6 +104,10 @@
             url = "https://developer.mozilla.org/";
           }
           {
+            name = "SCSS";
+            url = "https://sass-lang.com/documentation/";
+          }
+          {
             name = "Tailwind";
             url = "https://tailwindcss.com/docs/";
           }
