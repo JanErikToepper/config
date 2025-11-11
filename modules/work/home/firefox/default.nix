@@ -59,7 +59,7 @@ in {
         url = "http://pyxis.pages.internal.vadesecure.io/pyxis/angular/";
       }
       {
-        name = "Cptest 2";
+        name = "cptest2";
         url = "https://cptest2.hornetsecurity.com/";
       }
       {

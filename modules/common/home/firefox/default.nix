@@ -135,6 +135,14 @@
             name = "Playwright";
             url = "https://playwright.dev/docs/";
           }
+          {
+            name = "npm";
+            url = "https://docs.npmjs.com/";
+          }
+          {
+            name = "pnpm";
+            url = "https://pnpm.io/motivation/";
+          }
         ];
       };
 
