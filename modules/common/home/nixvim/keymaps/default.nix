@@ -37,11 +37,6 @@
     }
     {
       mode = "n";
-      key = "<leader>dq";
-      action = "<cmd>DiffviewClose<cr>";
-    }
-    {
-      mode = "n";
       key = "<leader>e";
       action = "<cmd>Oil<cr>";
     }
