@@ -1,7 +1,7 @@
 { ... } @ inputs: {
   programs.nixvim.autoCmd = [
     {
-      command = "lua pcall(function() vim.cmd('undojoin') end) vim.lsp.buf.format()";
+      command = "lua pcall(function() vim.cmd('undojoin') end) vim.cmd('Neoformat')";
       event = "BufWritePre";
     }
     {

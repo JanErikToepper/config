@@ -33,7 +33,7 @@
           format-charging = "{capacity}%  󰂄";
         };
         "clock#date" = {
-          format = "{:%d.%m}  ";
+          format = "{:%a.  %d.%m}  ";
         };
         "clock#time" = {
           format = "{:%H:%M}  󰥔";

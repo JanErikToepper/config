@@ -14,12 +14,7 @@
         ij_visual_guides = 120;
       };
 
-      "*.json" = {
-        max_line_length = 100;
-        ij_visual_guides = 100;
-      };
-
-      "*.html" = {
+      "{*.html,*.json}" = {
         max_line_length = 100;
         ij_visual_guides = 100;
       };

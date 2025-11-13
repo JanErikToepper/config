@@ -19,6 +19,9 @@
       ts-autotag.enable = true;
       web-devicons.enable = true;
     };
+    extraPlugins = with inputs.core.pkgs.vimPlugins; [
+      neoformat
+    ];
   };
 }
 
