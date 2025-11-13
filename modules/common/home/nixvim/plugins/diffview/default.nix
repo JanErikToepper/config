@@ -28,12 +28,12 @@
         {
           mode = "n";
           key = "<leader>P";
-          action = "<cmd>lua require('diffview.actions').next_conflict()<cr>";
+          action = "<cmd>lua require('diffview.actions').prev_conflict()<cr>";
         }
         {
           mode = "n";
           key = "<leader>N";
-          action = "<cmd>lua require('diffview.actions').prev_conflict()<cr>";
+          action = "<cmd>lua require('diffview.actions').next_conflict()<cr>";
         }
       ];
       filePanel = [
