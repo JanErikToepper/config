@@ -26,7 +26,7 @@
         "$mainMod, escape, killactive"
         "$mainMod, b, exec, $browser"
         "$mainMod, e, exec, $fileManager"
-        "$mainMod, s, exec, hyprshot -m window -m active -z -s --clipboard-only"
+        "$mainMod, s, exec, hyprshot -m region -z -s --clipboard-only"
 
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"

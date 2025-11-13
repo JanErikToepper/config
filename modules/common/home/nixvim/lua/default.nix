@@ -5,25 +5,51 @@ local function branch_name()
   local commit = io.popen("git log -1 --pretty=%B HEAD 2>/dev/null")
 
   if branch then
-    local name = branch:read("*l")
-    local com = commit:read("*l")
+    local branch_name = branch:read("*l")
+    local commit_name = commit:read("*l")
 
     branch:close()
     commit:close()
 
-    if name then
-      return string.format('[%s] : %s', name, com)
+    if branch_name then
+      return string.format('[%s] : %s', branch_name, commit_name)
     else
       return ""
     end
   end
 end
 
-function _G.status_line()
+local function file_path()
+  local filepath = vim.fn.expand("%f") .. "/"
+
+  local filepath_table = {}
+  for fragment in filepath:gmatch("(.-)/") do
+    if not (fragment == "") then
+      table.insert(filepath_table, fragment)
+    end
+  end
+
+  local formatted_filepath = ""
+  local count = 0
+  for i = #filepath_table, 1, -1 do
+    if (count > 2) then break end
+
+    formatted_filepath = "/" .. filepath_table[i] .. formatted_filepath
+    count = count + 1
+  end
+
+  return formatted_filepath
+end
+
+function _G.branch_name()
   return branch_name()
 end
 
-vim.opt.statusline = "%{%v:lua.status_line()%}   %=   %f"
+function _G.file_path()
+  return file_path()
+end
+
+vim.opt.statusline = "%{%v:lua.branch_name()%}   %=   %{%v:lua.file_path()%}"
   '';
 }
 
