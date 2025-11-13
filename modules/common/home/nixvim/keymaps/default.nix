@@ -123,7 +123,7 @@
     {
       mode = "n";
       key = "<leader>grc";
-      action = "<cmd>lua require('neogit.lib.git.status').stage_all(); require('neogit').action('rebase', 'continue')()<cr>";
+      action = "<cmd>lua require('neogit').action('rebase', 'continue')()<cr>";
     }
     {
       mode = "n";
