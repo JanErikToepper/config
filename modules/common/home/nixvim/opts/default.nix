@@ -6,6 +6,7 @@
     backup = false;
     clipboard = "unnamedplus";
     complete = "";
+    endofline = false;
     expandtab = true;
     hlsearch = false;
     ignorecase = true;
