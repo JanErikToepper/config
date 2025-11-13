@@ -20,7 +20,8 @@ local function branch_name()
 end
 
 local function file_path()
-  local filepath = vim.fn.expand("%f") .. "/"
+  local filepath = vim.fn.expand("%:h") .. "/"
+  local filename = vim.fn.expand("%:t")
 
   local filepath_table = {}
   for fragment in filepath:gmatch("(.-)/") do
@@ -32,13 +33,19 @@ local function file_path()
   local formatted_filepath = ""
   local count = 0
   for i = #filepath_table, 1, -1 do
-    if (count > 2) then break end
+    if (count > 1) then break end
 
     formatted_filepath = "/" .. filepath_table[i] .. formatted_filepath
     count = count + 1
   end
 
-  return formatted_filepath
+  if not (filename == "") then
+    return formatted_filepath .. "/ : [" .. filename .. "]"
+  elseif not (formatted_filepath == "") then
+    return formatted_filepath .. "/"
+  else
+    return ""
+  end
 end
 
 function _G.branch_name()
