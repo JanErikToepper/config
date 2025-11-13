@@ -16,7 +16,6 @@
       init.defaultBranch = "main";
       pull.rebase = true;
       push.autoSetupRemote = true;
-      rebase.autostash = true;
       rebase.updateRefs = true;
       rerere.enabled = true;
     };

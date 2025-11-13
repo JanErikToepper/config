@@ -118,7 +118,7 @@
     {
       mode = "n";
       key = "<leader>grb";
-      action = "<cmd>lua require('neogit').action('rebase', 'onto_elsewhere', { '--autostash' })()<cr>";
+      action = "<cmd>lua require('neogit').action('rebase', 'onto_elsewhere')()<cr>";
     }
     {
       mode = "n";
@@ -128,7 +128,7 @@
     {
       mode = "n";
       key = "<leader>gri";
-      action = "<cmd>lua require('neogit').action('rebase', 'interactively', { '--autostash' })()<cr>";
+      action = "<cmd>lua require('neogit').action('rebase', 'interactively')()<cr>";
     }
     {
       mode = "n";

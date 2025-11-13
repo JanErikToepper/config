@@ -12,6 +12,11 @@
       view = [
         {
           mode = "n";
+          key = "q";
+          action = "<cmd>DiffviewClose<cr>";
+        }
+        {
+          mode = "n";
           key = "<leader>p";
           action = "[c";
         }

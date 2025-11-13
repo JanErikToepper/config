@@ -4,20 +4,39 @@
     settings = {
       mainBar = {
         position = "top";
-        modules-right = [ "network" "pulseaudio" "battery" "clock" ];
+        modules-right = [
+          "network"
+          "custom/separator"
+          "pulseaudio"
+          "custom/separator"
+          "battery"
+          "custom/separator" 
+          "clock#date"
+          "custom/separator"
+          "clock#time"
+        ];
+        "custom/separator" = {
+          format = "|";
+          interval = "once";
+          tooltip = false;
+        };
         network = {
-          format-wifi = "{essid}";
-          format-disconnected = "--";
+          format-wifi = "{essid}  ";
+          format-disconnected = "--  ";
         };
         pulseaudio = {
-          format = "{volume}%";
-          format-muted = "--";
+          format = "{volume}%  ";
+          format-muted = "--  ";
         };
         battery = {
-          format = "{capacity}%";
+          format = "{capacity}%  󰂂";
+          format-charging = "{capacity}%  󰂄";
         };
-        clock = {
-          format = "{:%H:%M}";
+        "clock#date" = {
+          format = "{:%d.%m}  ";
+        };
+        "clock#time" = {
+          format = "{:%H:%M}  󰥔";
         };
       };
     };
@@ -32,10 +51,11 @@
         color: #fff;
       }
 
+      #custom-separator,
+      #network,
       #pulseaudio,
-      #clock,
       #battery,
-      #network {
+      #clock {
         margin-left: 10px;
         margin-right: 10px;
       }
