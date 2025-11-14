@@ -1,6 +1,5 @@
 { ... } @ inputs: {
   imports = [
-    ./auto-save
     ./cmp
     ./diffview
     ./gitsigns

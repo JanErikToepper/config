@@ -175,6 +175,11 @@
       key = "<leader>T";
       action = "<cmd>tabp<cr>";
     }
+    {
+      mode = "n";
+      key = "<leader>w";
+      action = "<cmd>w<cr>";
+    }
   ];
 }
 
