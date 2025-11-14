@@ -23,7 +23,6 @@
           preview.timeout = 1000;
           file_ignore_patterns = [
             ".angular"
-            ".devenv"
             ".git"
             "build"
             "dist"

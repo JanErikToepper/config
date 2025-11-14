@@ -12,6 +12,29 @@ in {
         name = "Outlook";
         urlTemplate = outlookUrl;
       }];
+      Permissions = {
+        Camera = {
+          Allow = [ "https://teams.microsoft.com/" ];
+          Locked = true;
+        };
+        Microphone = {
+          Allow = [ "https://teams.microsoft.com/" ];
+          Locked = true;
+        };
+        Notifications = {
+          Allow = [
+            "https://teams.microsoft.com/"
+            "https://outlook.office.com/"
+            "https://gitlab.hornetsecurity.com/"
+            "https://gitlabdev.internal.hornetsecurity.com/"
+          ];
+          Locked = true;
+        };
+        ScreenShare = {
+          Allow = [ "https://teams.microsoft.com/" ];
+          Locked = true;
+        };
+      };
     };
     profiles.toepper.bookmarks.settings = [
       {
