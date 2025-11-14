@@ -74,12 +74,8 @@ in {
         url = "https://gitlabdev.internal.hornetsecurity.com/";
       }
       {
-        name = "Pyxis - Design System";
+        name = "Pyxis";
         url = "https://pyxis.vadesecure.com/latest/components/components-overview-5QsSkdUr/";
-      }
-      {
-        name = "Pyxis - Storybook";
-        url = "http://pyxis.pages.internal.vadesecure.io/pyxis/angular/";
       }
       {
         name = "cptest2";
