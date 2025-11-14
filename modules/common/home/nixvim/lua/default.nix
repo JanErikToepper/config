@@ -33,7 +33,7 @@ local function file_path()
   local formatted_filepath = ""
   local count = 0
   for i = #filepath_table, 1, -1 do
-    if (count > 1) then break end
+    if (count > 2) then break end
 
     formatted_filepath = "/" .. filepath_table[i] .. formatted_filepath
     count = count + 1
