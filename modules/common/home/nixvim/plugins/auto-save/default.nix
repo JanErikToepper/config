@@ -7,12 +7,12 @@
           local utils = require("auto-save.utils.data")
 
           local ignored_filetypes = {
-            "TelescopePrompt"
-            "oil"
-            "NeogitStatus"
-            "NeogitLogView"
-            "DiffviewFiles"
-            "gitcommit"
+            "TelescopePrompt",
+            "oil",
+            "NeogitStatus",
+            "NeogitLogView",
+            "DiffviewFiles",
+            "gitcommit",
           }
         
           if utils.not_in(vim.fn.getbufvar(buf, "&filetype"), ignored_filetypes) then
@@ -22,7 +22,7 @@
           return false
         end
       '';
-      debounce_delay = 5000;
+      debounce_delay = 3000;
     };
   };
 }
