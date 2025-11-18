@@ -13,7 +13,7 @@
     ];
 
     "workspace" = [
-      "1, monitor:$monitorExtra, persistent:true, default:true, on-created-empty:firefox --new-window"
+      "1, monitor:$monitorExtra, persistent:true, default:true"
       "2, monitor:$monitorMain, persistent:true, default:true, on-created-empty:$terminal tmux"
       "3, monitor:$monitorLaptop, persistent:true, default:true, on-created-empty:firefox --new-window https://teams.microsoft.com/v2/"
     ];
