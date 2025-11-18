@@ -10,7 +10,7 @@
       skip_confirm_for_simple_edits = true;
       lsp_file_method = {
         autosave_changes = true;
-        timeout_ms = 5000;
+        timeout_ms = 10000;
       };
       preview.border = null;
       progress.border = null;
