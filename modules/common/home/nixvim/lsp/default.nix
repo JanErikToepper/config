@@ -10,6 +10,10 @@
         lspBufAction = "definition";
       }
       {
+        key = "gr";
+        lspBufAction = "rename";
+      }
+      {
         key = "gt";
         lspBufAction = "type_definition";
       }

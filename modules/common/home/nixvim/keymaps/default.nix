@@ -17,11 +17,6 @@
     }
     {
       mode = "n";
-      key = "gr";
-      action = "<cmd>lua vim.lsp.buf.rename() vim.cmd('silent wa')<cr>";
-    }
-    {
-      mode = "n";
       key = "<leader>dk";
       action = "<cmd>lua vim.diagnostic.open_float()<cr>";
     }
@@ -189,6 +184,11 @@
       mode = "n";
       key = "<leader>w";
       action = "<cmd>w<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>W";
+      action = "<cmd>wa<cr>";
     }
   ];
 }
