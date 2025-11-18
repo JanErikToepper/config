@@ -72,6 +72,11 @@
     }
     {
       mode = "n";
+      key = "<leader>fr";
+      action = "<cmd>lua require('spectre').open()<cr>";
+    }
+    {
+      mode = "n";
       key = "<leader>ga";
       action = "<cmd>lua require('neogit.lib.git.status').stage_all(); require('neogit').action('commit', 'amend')()<cr>";
     }

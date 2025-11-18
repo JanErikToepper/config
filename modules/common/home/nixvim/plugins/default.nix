@@ -7,6 +7,7 @@
     ./neogit
     ./none-ls
     ./oil
+    ./spectre
     ./telescope
     ./treesitter
   ];
