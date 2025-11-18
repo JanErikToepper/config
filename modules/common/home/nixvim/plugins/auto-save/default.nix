@@ -9,6 +9,7 @@
           local ignored_filetypes = {
             "TelescopePrompt",
             "oil",
+            "spectre_panel",
             "NeogitStatus",
             "NeogitLogView",
             "DiffviewFiles",
