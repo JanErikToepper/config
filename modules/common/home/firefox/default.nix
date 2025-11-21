@@ -143,9 +143,10 @@
             name = "pnpm";
             url = "https://pnpm.io/motivation/";
           }
-          # {
-          #   name = "Webpack";
-          # }
+          {
+            name = "Webpack";
+            url = "https://webpack.js.org/concepts/";
+          }
         ];
       };
 

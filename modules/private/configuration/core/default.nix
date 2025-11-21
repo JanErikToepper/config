@@ -1,0 +1,4 @@
+{ ... } @ inputs: {
+  networking.hostName = "toepper";
+}
+

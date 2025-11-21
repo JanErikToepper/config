@@ -97,11 +97,6 @@
     }
     {
       mode = "n";
-      key = "<leader>gm";
-      action = "<cmd>lua require('neogit').action('branch', 'open_pull_request')()<cr>";
-    }
-    {
-      mode = "n";
       key = "<leader>gp";
       action = "<cmd>lua require('neogit').action('pull', 'from_pushremote', { '--rebase' })()<cr>";
     }

@@ -22,7 +22,7 @@
       "$mainMod" = "SUPER";
 
       "bind" = [
-        "$mainMod, return, exec, kitty"
+        "$mainMod, return, exec, $terminal"
         "$mainMod, escape, killactive"
         "$mainMod, b, exec, $browser"
         "$mainMod, e, exec, $fileManager"
@@ -61,7 +61,7 @@
       "exec-once" = [ "waybar" ];
     };
   };
-  
+
   programs.kitty.enable = true;
 
   services.mako.enable = true;
