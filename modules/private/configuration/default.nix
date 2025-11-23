@@ -1,4 +1,7 @@
 { ... } @ inputs: {
-  imports = [ ./core ];
+  imports = [
+    ./core
+    ./programs
+  ];
 }
 
