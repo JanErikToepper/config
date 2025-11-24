@@ -1,4 +1,17 @@
-{ ... } @ inputs: {
+{ ... } @ inputs: let
+  commonKeymaps = [
+    {
+      mode = "n";
+      key = "q";
+      action = "<cmd>DiffviewClose<cr>";
+    }
+    {
+      mode = "n";
+      key = "gf";
+      action = "<cmd>lua require('diffview.actions').goto_file_tab()<cr>";
+    }
+  ];
+in {
   programs.nixvim.plugins.diffview = {
     enable = true;
     enhancedDiffHl = true;
@@ -9,11 +22,6 @@
     };
     keymaps = {
       view = [
-        {
-          mode = "n";
-          key = "q";
-          action = "<cmd>DiffviewClose<cr>";
-        }
         {
           mode = "n";
           key = "<leader>p";
@@ -34,19 +42,14 @@
           key = "<leader>N";
           action = "<cmd>lua require('diffview.actions').next_conflict()<cr>";
         }
-      ];
+      ] ++ commonKeymaps;
       filePanel = [
-        {
-          mode = "n";
-          key = "q";
-          action = "<cmd>DiffviewClose<cr>";
-        }
         {
           mode = "n";
           key = "<c-w>";
           action = "<C-W>>";
         }
-      ];
+      ] ++ commonKeymaps;
     };
   };
 }

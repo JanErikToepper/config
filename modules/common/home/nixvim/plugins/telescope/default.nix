@@ -1,4 +1,6 @@
 { ... } @ inputs: {
+  imports = [ ./extensions ];
+
   programs = {
     nixvim.plugins.telescope = {
       enable = true;

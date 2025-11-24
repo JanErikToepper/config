@@ -30,13 +30,13 @@ in {
     }
     {
       mode = "n";
-      key = "<leader>do";
-      action = "<cmd>DiffviewOpen<cr>";
+      key = "<leader>dp";
+      action = "<cmd>lua vim.diagnostic.goto_prev()<cr>";
     }
     {
       mode = "n";
-      key = "<leader>dp";
-      action = "<cmd>lua vim.diagnostic.goto_prev()<cr>";
+      key = "<leader>D";
+      action = "<cmd>DiffviewOpen<cr>";
     }
     {
       mode = "n";
@@ -94,6 +94,16 @@ in {
       action = "<cmd>lua ${commit}<cr>";
     }
     {
+      mode = "v";
+      key = "<leader>gdv";
+      action = "<cmd>'<,'>AdvancedGitSearch diff_commit_line<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>gdb";
+      action = "<cmd>AdvancedGitSearch diff_branch_file<cr>";
+    }
+    {
       mode = "n";
       key = "<leader>gl";
       action = "<cmd>lua require('neogit').action('log', 'log_current')()<cr>";
@@ -132,6 +142,11 @@ in {
       mode = "n";
       key = "<leader>gri";
       action = "<cmd>lua require('neogit').action('rebase', 'interactively')()<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>gR";
+      action = "<cmd>AdvancedGitSearch checkout_reflog<cr>";
     }
     {
       mode = "n";

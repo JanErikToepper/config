@@ -18,7 +18,7 @@
           name = "nvim_lsp_signature_help";
         }
         {
-          name = "fuzzy_path";
+          name = "path";
         }
       ];
     };

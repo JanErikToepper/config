@@ -92,6 +92,10 @@
             url = "https://angular.dev/overview/";
           }
           {
+            name = "Faker";
+            url = "https://fakerjs.dev/api/";
+          }
+          {
             name = "Git";
             url = "https://git-scm.com/docs/";
           }
@@ -104,6 +108,34 @@
             url = "https://developer.mozilla.org/";
           }
           {
+            name = "MSW";
+            url = "https://mswjs.io/docs/";
+          }
+          {
+            name = "MSW data";
+            url = "https://github.com/mswjs/data/";
+          }
+          {
+            name = "NGRX";
+            url = "https://ngrx.io/docs/";
+          }
+          {
+            name = "Node.js";
+            url = "https://nodejs.org/docs/latest/api/";
+          }
+          {
+            name = "npm";
+            url = "https://docs.npmjs.com/";
+          }
+          {
+            name = "Playwright";
+            url = "https://playwright.dev/docs/";
+          }
+          {
+            name = "pnpm";
+            url = "https://pnpm.io/motivation/";
+          }
+          {
             name = "SCSS";
             url = "https://sass-lang.com/documentation/";
           }
@@ -114,34 +146,6 @@
           {
             name = "TypeScript";
             url = "https://www.typescriptlang.org/docs/";
-          }
-          {
-            name = "NGRX";
-            url = "https://ngrx.io/docs/";
-          }
-          {
-            name = "MSW";
-            url = "https://mswjs.io/docs/";
-          }
-          {
-            name = "MSW data";
-            url = "https://github.com/mswjs/data/";
-          }
-          {
-            name = "Faker";
-            url = "https://fakerjs.dev/api/";
-          }
-          {
-            name = "Playwright";
-            url = "https://playwright.dev/docs/";
-          }
-          {
-            name = "npm";
-            url = "https://docs.npmjs.com/";
-          }
-          {
-            name = "pnpm";
-            url = "https://pnpm.io/motivation/";
           }
           {
             name = "Webpack";
