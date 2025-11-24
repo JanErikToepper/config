@@ -1,6 +1,6 @@
 { ... } @ inputs: let
   stageAll = "require('neogit.lib.git.status').stage_all()";
-  commit = "${stageAll}; require('neogit').action('commit', 'amend')()";
+  commit = "${stageAll}; require('neogit').action('commit', 'commit')()";
 in {
   programs.nixvim.keymaps = [
     {
