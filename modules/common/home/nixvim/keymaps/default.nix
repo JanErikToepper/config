@@ -1,4 +1,7 @@
-{ ... } @ inputs: {
+{ ... } @ inputs: let
+  stageAll = "require('neogit.lib.git.status').stage_all()";
+  commit = "${stageAll}; require('neogit').action('commit', 'amend')()";
+in {
   programs.nixvim.keymaps = [
     {
       mode = "n";
@@ -78,17 +81,17 @@
     {
       mode = "n";
       key = "<leader>ga";
-      action = "<cmd>lua require('neogit.lib.git.status').stage_all(); require('neogit').action('commit', 'amend')()<cr>";
+      action = "<cmd>lua ${stageAll}; require('neogit').action('commit', 'amend')()<cr>";
     }
     {
       mode = "n";
       key = "<leader>gb";
-      action = "<cmd>lua require('telescope.builtin').git_branches()<cr>";
+      action = "<cmd>lua ${commit}; require('telescope.builtin').git_branches()<cr>";
     }
     {
       mode = "n";
       key = "<leader>gc";
-      action = "<cmd>lua require('neogit.lib.git.status').stage_all(); require('neogit').action('commit', 'commit')()<cr>";
+      action = "<cmd>lua ${commit}<cr>";
     }
     {
       mode = "n";
@@ -123,7 +126,7 @@
     {
       mode = "n";
       key = "<leader>grc";
-      action = "<cmd>lua require('neogit.lib.git.status').stage_all(); require('neogit').action('rebase', 'continue')()<cr>";
+      action = "<cmd>lua ${stageAll}; require('neogit').action('rebase', 'continue')()<cr>";
     }
     {
       mode = "n";
@@ -148,7 +151,12 @@
     {
       mode = "n";
       key = "<leader>gxh";
-      action = "<cmd>lua require('neogit.lib.git.status').stage_all(); require('neogit.lib.git.cli').reset.hard.args(require('neogit.lib.git.branch').current()).call(); vim.cmd('checktime')<cr>";
+      action = "<cmd>lua ${stageAll}; require('neogit.lib.git.cli').reset.hard.args(require('neogit.lib.git.branch').current()).call(); vim.cmd('checktime')<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>m";
+      action = "<cmd>Markview<cr>";
     }
     {
       mode = "n";

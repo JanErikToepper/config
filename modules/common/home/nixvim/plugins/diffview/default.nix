@@ -1,7 +1,6 @@
 { ... } @ inputs: {
   programs.nixvim.plugins.diffview = {
     enable = true;
-    diffBinaries = true;
     enhancedDiffHl = true;
     showHelpHints = false;
     filePanel = {
