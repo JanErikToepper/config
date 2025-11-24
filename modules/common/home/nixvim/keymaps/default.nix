@@ -35,11 +35,6 @@ in {
     }
     {
       mode = "n";
-      key = "<leader>D";
-      action = "<cmd>DiffviewOpen<cr>";
-    }
-    {
-      mode = "n";
       key = "<leader>e";
       action = "<cmd>Oil<cr>";
     }
@@ -95,18 +90,23 @@ in {
     }
     {
       mode = "v";
-      key = "<leader>gdv";
+      key = "<leader>gd";
       action = "<cmd>'<,'>AdvancedGitSearch diff_commit_line<cr>";
     }
     {
       mode = "n";
-      key = "<leader>gdb";
+      key = "<leader>gd";
       action = "<cmd>AdvancedGitSearch diff_branch_file<cr>";
     }
     {
       mode = "n";
+      key = "<leader>gD";
+      action = "<cmd>DiffviewOpen<cr>";
+    }
+    {
+      mode = "n";
       key = "<leader>gl";
-      action = "<cmd>lua require('neogit').action('log', 'log_current')()<cr>";
+      action = "<cmd>lua require('neogit').action('log', 'log_current', { '--decorate' })()<cr>";
     }
     {
       mode = "n";
