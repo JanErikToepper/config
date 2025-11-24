@@ -28,6 +28,8 @@
       bind-key w swap-window -t +1\; select-window -t +1
       bind-key W swap-window -t -1\; select-window -t -1
 
+      bind-key S setw synchronize-panes
+
       bind-key c new-window -c "#{pane_current_path}"
       bind-key C new-session -c "#{pane_current_path}"
 
