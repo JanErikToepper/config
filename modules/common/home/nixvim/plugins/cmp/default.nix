@@ -12,19 +12,13 @@
       preselect = "cmp.PreselectMode.Item";
       sources = [
         {
-          name = "fuzzy_buffer";
-        }
-        {
-          name = "fuzzy_path";
-        }
-        {
           name = "nvim_lsp";
         }
         {
           name = "nvim_lsp_signature_help";
         }
         {
-          name = "treesitter";
+          name = "fuzzy_path";
         }
       ];
     };
