@@ -1,6 +1,6 @@
 { ... } @ inputs: let
   stageAll = "require('neogit.lib.git.status').stage_all()";
-  commit = "${stageAll}; require('neogit').action('commit', 'commit')()";
+  commit = "vim.cmd('Neoformat'); ${stageAll}; require('neogit').action('commit', 'commit')()";
 in {
   programs.nixvim.keymaps = [
     {
@@ -76,7 +76,7 @@ in {
     {
       mode = "n";
       key = "<leader>ga";
-      action = "<cmd>lua ${stageAll}; require('neogit').action('commit', 'amend')()<cr>";
+      action = "<cmd>lua vim.cmd('Neofomat'); ${stageAll}; require('neogit').action('commit', 'amend')()<cr>";
     }
     {
       mode = "n";
@@ -155,7 +155,7 @@ in {
     }
     {
       mode = "n";
-      key = "<leader>ghr";
+      key = "<leader>ghx";
       action = "<cmd>Gitsigns reset_hunk<cr>";
     }
     {
@@ -201,7 +201,7 @@ in {
     {
       mode = "n";
       key = "<leader>w";
-      action = "<cmd>w<cr>";
+      action = "<cmd>up<cr>";
     }
     {
       mode = "n";

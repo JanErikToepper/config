@@ -92,6 +92,10 @@
             url = "https://angular.dev/overview/";
           }
           {
+            name = "Compodoc";
+            url = "https://compodoc.app/guides/getting-started.html";
+          }
+          {
             name = "Faker";
             url = "https://fakerjs.dev/api/";
           }
