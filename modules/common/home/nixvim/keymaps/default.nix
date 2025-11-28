@@ -65,18 +65,13 @@ in {
     }
     {
       mode = "n";
-      key = "<leader>fm"; 
-      action = "<cmd>lua require('telescope.builtin').man_pages()<cr>";
-    }
-    {
-      mode = "n";
       key = "<leader>fr";
       action = "<cmd>lua require('spectre').open()<cr>";
     }
     {
       mode = "n";
       key = "<leader>ga";
-      action = "<cmd>lua vim.cmd('Neofomat'); ${stageAll}; require('neogit').action('commit', 'amend')()<cr>";
+      action = "<cmd>lua vim.cmd('Neoformat'); ${stageAll}; require('neogit').action('commit', 'amend')()<cr>";
     }
     {
       mode = "n";
