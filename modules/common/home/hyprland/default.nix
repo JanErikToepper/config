@@ -31,6 +31,7 @@
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
         "$mainMod, 3, workspace, 3"
+        "$mainMod, 4, workspace, 4"
 
         "$mainMod, h, movefocus, l"
         "$mainMod, l, movefocus, r"
