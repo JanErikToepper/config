@@ -9,10 +9,8 @@
       git
       unzip
       hyprshot
-      jq
-      grim
+      wf-recorder
       slurp
-      wl-clipboard
     ];
   };
 }
