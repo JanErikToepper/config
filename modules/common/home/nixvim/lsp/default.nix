@@ -25,7 +25,7 @@
     servers = {
       angularls.enable = true;
       bashls.enable = true;
-      cssls.enable = true;
+      #cssls.enable = true;
       diagnosticls.enable = true;
       dockerls.enable = true;
       html.enable = true;
