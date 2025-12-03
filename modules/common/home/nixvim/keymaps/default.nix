@@ -1,6 +1,5 @@
 { ... } @ inputs: let
   stageAll = "require('neogit.lib.git.status').stage_all()";
-  commit = "vim.cmd('Neoformat'); ${stageAll}; require('neogit').action('commit', 'commit')()";
 in {
   programs.nixvim.keymaps = [
     {
@@ -71,17 +70,17 @@ in {
     {
       mode = "n";
       key = "<leader>ga";
-      action = "<cmd>lua vim.cmd('Neoformat'); ${stageAll}; require('neogit').action('commit', 'amend')()<cr>";
+      action = "<cmd>lua ${stageAll}; require('neogit').action('commit', 'amend')()<cr>";
     }
     {
       mode = "n";
       key = "<leader>gb";
-      action = "<cmd>lua ${commit}; require('telescope.builtin').git_branches()<cr>";
+      action = "<cmd>lua if (require('neogit.lib.git.status').is_dirty()) then vim.notify('Branch is dirty', 'warn', { title = 'Neogit' }) else require('telescope.builtin').git_branches() end<cr>";
     }
     {
       mode = "n";
       key = "<leader>gc";
-      action = "<cmd>lua ${commit}<cr>";
+      action = "<cmd>lua ${stageAll}; require('neogit').action('commit', 'commit')()<cr>";
     }
     {
       mode = "v";
@@ -115,8 +114,18 @@ in {
     }
     {
       mode = "n";
-      key = "<leader>gs";
+      key = "<leader>G";
       action = "<cmd>Neogit<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>gsp";
+      action = "<cmd>lua require('neogit').action('stash', 'pop')()<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>gss";
+      action = "<cmd>lua require('neogit').action('stash', 'both', { '--include-untracked' })()<cr>";
     }
     {
       mode = "n";
@@ -196,7 +205,7 @@ in {
     {
       mode = "n";
       key = "<leader>w";
-      action = "<cmd>up<cr>";
+      action = "<cmd>w<cr>";
     }
     {
       mode = "n";

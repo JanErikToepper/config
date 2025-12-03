@@ -29,6 +29,7 @@
       nautilus
       tmuxifier
       devenv
+      prettierd
     ];
   };
 

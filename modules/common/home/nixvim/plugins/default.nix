@@ -7,6 +7,7 @@
     ./markview
     ./neogit
     ./none-ls
+    ./notify
     ./oil
     ./spectre
     ./telescope

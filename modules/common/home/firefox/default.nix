@@ -140,6 +140,10 @@
             url = "https://pnpm.io/motivation/";
           }
           {
+            name = "RxJS";
+            url = "https://rxjs.dev/guide/overview/";
+          }
+          {
             name = "SCSS";
             url = "https://sass-lang.com/documentation/";
           }
