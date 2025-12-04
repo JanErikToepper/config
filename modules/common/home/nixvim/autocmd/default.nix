@@ -1,7 +1,7 @@
 { ... } @ inputs: {
   programs.nixvim.autoCmd = [
     {
-      command = "silent lua pcall(function() vim.cmd('undojoin') end) vim.lsp.buf.format()";
+      command = "silent lua pcall(function() vim.cmd('undojoin') end) vim.lsp.buf.format({ filter = function(client) return client.name == 'null-ls' end })";
       event = [
         "BufWritePre"
         "BufLeave"
