@@ -25,7 +25,10 @@
     servers = {
       angularls.enable = true;
       bashls.enable = true;
-      #cssls.enable = true;
+      cssls = {
+        enable = true;
+        settings.init_options.provideFormatter = false;
+      };
       diagnosticls.enable = true;
       dockerls.enable = true;
       html.enable = true;

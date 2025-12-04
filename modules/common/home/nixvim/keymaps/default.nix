@@ -99,6 +99,11 @@ in {
     }
     {
       mode = "n";
+      key = "<leader>gf";
+      action = "<cmd>lua require('neogit').action('fetch', 'fetch_upstream', { '--prune' })()<cr>";
+    }
+    {
+      mode = "n";
       key = "<leader>gl";
       action = "<cmd>lua require('neogit').action('log', 'log_current', { '--decorate' })()<cr>";
     }
@@ -170,7 +175,7 @@ in {
     {
       mode = "n";
       key = "<leader>gxh";
-      action = "<cmd>lua ${stageAll}; require('neogit.lib.git.cli').reset.hard.args(require('neogit.lib.git.branch').current()).call(); vim.cmd('checktime')<cr>";
+      action = "<cmd>lua ${stageAll}; require('neogit.lib.git.cli').reset.hard.args(require('neogit.lib.git.branch').current()).call(); vim.cmd('e!')<cr>";
     }
     {
       mode = "n";
@@ -190,7 +195,7 @@ in {
     {
       mode = "n";
       key = "<leader>r";
-      action = "<cmd>checktime<cr>";
+      action = "<cmd>e!<cr>";
     }
     {
       mode = "n";
