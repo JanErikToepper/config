@@ -1,4 +1,6 @@
 { ... } @ inputs: {
+  imports = [ ./chromium ];
+
   programs = {
     hyprland = {
       enable = true;

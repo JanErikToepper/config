@@ -10,7 +10,7 @@
 
     "workspace" = [
       "1, monitor:$monitorMain, persistent:true, default:true, on-created-empty:$terminal tmux"
-      "2, monitor:$monitorLaptop, persistent:true, default:false, on-created-empty:firefox"
+      "2, monitor:$monitorLaptop, persistent:true, default:false, on-created-empty:$browser"
     ];
   };
 }

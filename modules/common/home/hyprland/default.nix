@@ -8,7 +8,7 @@
 
       "$terminal" = "kitty";
       "$fileManager" = "nautilus";
-      "$browser" = "firefox";
+      "$browser" = "chromium";
 
       "animations" = import ./modules/animations.nix {};
       "cursor" = import ./modules/cursor.nix {};

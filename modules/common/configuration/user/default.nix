@@ -30,6 +30,7 @@
       tmuxifier
       devenv
       prettierd
+      chromium
     ];
   };
 

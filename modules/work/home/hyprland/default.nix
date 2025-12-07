@@ -19,11 +19,11 @@ in {
     ];
 
     "workspace" = if laptopIsMostRight then [
-      "3, monitor:$monitorLaptop, persistent:true, default:true, on-created-empty:firefox --new-window https://teams.microsoft.com/v2/"
+      "3, monitor:$monitorLaptop, persistent:true, default:true, on-created-empty:$browser --new-window https://teams.microsoft.com/v2/"
       "2, monitor:$monitorMain, persistent:true, default:true, on-created-empty:$terminal tmux"
       "1, monitor:$monitorExtra, persistent:true, default:true"
     ] else [
-      "1, monitor:$monitorLaptop, persistent:true, default:true, on-created-empty:firefox --new-window https://teams.microsoft.com/v2/"
+      "1, monitor:$monitorLaptop, persistent:true, default:true, on-created-empty:$browser --new-window https://teams.microsoft.com/v2/"
       "2, monitor:$monitorMain, persistent:true, default:true, on-created-empty:$terminal tmux"
       "3, monitor:$monitorExtra, persistent:true, default:true"
     ];
