@@ -8,7 +8,7 @@
 
       "$terminal" = "kitty";
       "$fileManager" = "nautilus";
-      "$browser" = "chromium";
+      "$browser" = "firefox";
 
       "animations" = import ./modules/animations.nix {};
       "cursor" = import ./modules/cursor.nix {};
@@ -25,6 +25,7 @@
         "$mainMod, return, exec, $terminal"
         "$mainMod, escape, killactive"
         "$mainMod, b, exec, $browser"
+        "$mainMod CTRL, b, exec, chromium http://localhost:4200/"
         "$mainMod, e, exec, $fileManager"
         "$mainMod, s, exec, hyprshot -m region -z -s --clipboard-only"
 
@@ -32,6 +33,7 @@
         "$mainMod, 2, workspace, 2"
         "$mainMod, 3, workspace, 3"
         "$mainMod, 4, workspace, 4"
+        "$mainMod, 5, workspace, 5"
 
         "$mainMod, h, movefocus, l"
         "$mainMod, l, movefocus, r"
