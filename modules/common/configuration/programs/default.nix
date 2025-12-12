@@ -1,4 +1,6 @@
 { ... } @ inputs: {
+  imports = [ ./chromium ];
+
   programs = {
     hyprland = {
       enable = true;
@@ -8,7 +10,6 @@
       enable = true;
       defaultEditor = true;
     };
-    chromium.enable = true;
   };
 }
 

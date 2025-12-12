@@ -156,6 +156,10 @@
             url = "https://www.typescriptlang.org/docs/";
           }
           {
+            name = "Vitest";
+            url = "https://vitest.dev/guide/";
+          }
+          {
             name = "Webpack";
             url = "https://webpack.js.org/concepts/";
           }
