@@ -112,6 +112,10 @@
             url = "https://developer.mozilla.org/";
           }
           {
+            name = "Module Federation";
+            url = "https://module-federation.io/guide/start/index.html";
+          }
+          {
             name = "MSW";
             url = "https://mswjs.io/docs/";
           }
@@ -154,6 +158,10 @@
           {
             name = "TypeScript";
             url = "https://www.typescriptlang.org/docs/";
+          }
+          {
+            name = "Vite";
+            url = "https://vite.dev/guide/";
           }
           {
             name = "Vitest";

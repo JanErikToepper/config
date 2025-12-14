@@ -1,7 +1,10 @@
 { ... } @ inputs: {
   programs.chromium = {
     enable = true;
-    extensions = [ "ienfalfjdbdpebioblfackkekamfmbnh" ];
+    extensions = [
+      "ienfalfjdbdpebioblfackkekamfmbnh"
+      "aeoilchhomapofiopejjlecddfldpeom"
+    ];
   };
 }
 
