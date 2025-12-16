@@ -31,6 +31,10 @@
       enable = true;
       audio.enable = true;
     };
+    earlyoom = {
+      enable = true;
+      enableNotifications = true;
+    };
     openssh.enable = true;
   };
 }
