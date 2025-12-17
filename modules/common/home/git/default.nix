@@ -10,6 +10,7 @@
       ".pre-commit-config.yaml"
     ];
     extraConfig = {
+      advice.detachedHead = false;
       branch.sort = "-committerdate";
       diff.algorithm = "histogram";
       fetch.prune = true;
