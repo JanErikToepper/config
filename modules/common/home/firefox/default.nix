@@ -161,7 +161,7 @@
           }
           {
             name = "Vite";
-            url = "https://vite.dev/guide/";
+            url = "https://vite.dev/config/";
           }
           {
             name = "Vitest";

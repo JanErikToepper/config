@@ -4,10 +4,12 @@
     userName = "Jan Erik Töpper";
     ignores = [
       ".devenv*"
-      "devenv*"
       ".direnv"
       ".envrc"
       ".pre-commit-config.yaml"
+      "devenv*"
+      "dist"
+      "node_modules"
     ];
     extraConfig = {
       advice.detachedHead = false;
