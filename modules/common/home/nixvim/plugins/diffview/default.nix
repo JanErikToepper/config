@@ -14,42 +14,44 @@
 in {
   programs.nixvim.plugins.diffview = {
     enable = true;
-    enhancedDiffHl = true;
-    showHelpHints = false;
-    filePanel = {
-      treeOptions.folderStatuses = "never";
-      winConfig.width = 50;
-    };
-    keymaps = {
-      view = [
-        {
-          mode = "n";
-          key = "<leader>p";
-          action = "[c";
-        }
-        {
-          mode = "n";
-          key = "<leader>n";
-          action = "]c";
-        }
-        {
-          mode = "n";
-          key = "<leader>P";
-          action = "<cmd>lua require('diffview.actions').prev_conflict()<cr>";
-        }
-        {
-          mode = "n";
-          key = "<leader>N";
-          action = "<cmd>lua require('diffview.actions').next_conflict()<cr>";
-        }
-      ] ++ commonKeymaps;
-      filePanel = [
-        {
-          mode = "n";
-          key = "<c-w>";
-          action = "<C-W>>";
-        }
-      ] ++ commonKeymaps;
+    settings = {
+      enhanced_diff_hl = true;
+      show_help_hints = false;
+      file_panel = {
+        tree_options.folder_statuses = "never";
+        win_config.width = 50;
+      };
+      keymaps = {
+        view = [
+          {
+            mode = "n";
+            key = "<leader>p";
+            action = "[c";
+          }
+          {
+            mode = "n";
+            key = "<leader>n";
+            action = "]c";
+          }
+          {
+            mode = "n";
+            key = "<leader>P";
+            action = "<cmd>lua require('diffview.actions').prev_conflict()<cr>";
+          }
+          {
+            mode = "n";
+            key = "<leader>N";
+            action = "<cmd>lua require('diffview.actions').next_conflict()<cr>";
+          }
+        ] ++ commonKeymaps;
+        file_panel = [
+          {
+            mode = "n";
+            key = "<c-w>";
+            action = "<C-W>>";
+          }
+        ] ++ commonKeymaps;
+      };
     };
   };
 }

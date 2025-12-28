@@ -1,7 +1,6 @@
 { ... } @ inputs: {
   programs.git = {
     enable = true;
-    userName = "Jan Erik Töpper";
     ignores = [
       ".devenv*"
       ".direnv"
@@ -11,7 +10,8 @@
       "dist"
       "node_modules"
     ];
-    extraConfig = {
+    settings = {
+      user.name = "Jan Erik Töpper";
       advice.detachedHead = false;
       branch.sort = "-committerdate";
       diff.algorithm = "histogram";

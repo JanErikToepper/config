@@ -1,4 +1,4 @@
 { ... } @ inputs: {
-  programs.git.userEmail = "tech.toepper@outlook.com";
+  programs.git.settings.user.email = "tech.toepper@outlook.com";
 }
 
