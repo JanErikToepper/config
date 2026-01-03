@@ -199,12 +199,12 @@ in {
     }
     {
       mode = "n";
-      key = "<leader>t";
+      key = "<leader>tn";
       action = "<cmd>tabn<cr>";
     }
     {
       mode = "n";
-      key = "<leader>T";
+      key = "<leader>tp";
       action = "<cmd>tabp<cr>";
     }
     {

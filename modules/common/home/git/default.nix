@@ -4,6 +4,7 @@
     ignores = [
       ".devenv*"
       ".direnv"
+      ".env"
       ".envrc"
       ".pre-commit-config.yaml"
       "devenv*"

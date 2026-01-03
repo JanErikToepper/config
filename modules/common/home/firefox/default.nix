@@ -96,6 +96,10 @@
             url = "https://compodoc.app/guides/getting-started.html";
           }
           {
+            name = "Docker";
+            url = "https://docs.docker.com/manuals/";
+          }
+          {
             name = "Faker";
             url = "https://fakerjs.dev/api/";
           }
