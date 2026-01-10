@@ -4,6 +4,7 @@
     ./cmp
     ./diffview
     ./gitsigns
+    ./i18n
     ./markview
     ./neogit
     ./none-ls
