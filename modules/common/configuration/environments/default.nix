@@ -10,7 +10,9 @@
       unzip
       hyprshot
       wf-recorder
-      slurp
+      slurp # dep of wf-recorder
+      inotify-tools # dep of vim.lsp
+      nodePackages.nodejs # dep of treesitter
     ];
   };
 }

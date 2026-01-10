@@ -7,6 +7,7 @@
 
     extraConfig = ''
       set -g escape-time 0
+      set-option -g focus-events on
       set-option -g default-terminal 'screen-256color'
 
       set -g prefix C-s
