@@ -132,6 +132,10 @@
             url = "https://ngrx.io/docs/";
           }
           {
+            name = "ngx-translate";
+            url = "https://ngx-translate.org/";
+          }
+          {
             name = "Node.js";
             url = "https://nodejs.org/docs/latest/api/";
           }

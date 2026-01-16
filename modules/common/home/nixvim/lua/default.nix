@@ -40,7 +40,7 @@ local function file_path()
   end
 
   if not (filename == "") then
-    return formatted_filepath .. "/ : [" .. filename .. "]"
+    return formatted_filepath .. "/" .. filename
   elseif not (formatted_filepath == "") then
     return formatted_filepath .. "/"
   else

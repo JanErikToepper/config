@@ -1,5 +1,5 @@
 { ... } @ inputs: let
-  stageAll = "require('neogit.lib.git.status').stage_all()";
+  stageAll = "vim.cmd('update'); require('neogit.lib.git.status').stage_all()";
 in {
   programs.nixvim.keymaps = [
     {
