@@ -3,13 +3,13 @@
     enable = true;
     ignores = [
       ".devenv*"
-      ".direnv"
+      ".direnv/"
       ".env"
       ".envrc"
       ".pre-commit-config.yaml"
       "devenv*"
-      "dist"
-      "node_modules"
+      "dist/"
+      "node_modules/"
     ];
     settings = {
       user.name = "Jan Erik Töpper";

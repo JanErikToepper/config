@@ -24,11 +24,10 @@
           history = false;
           preview.timeout = 1000;
           file_ignore_patterns = [
-            ".angular"
-            ".git"
-            "build"
-            "dist"
-            "node_modules/"
+            ".angular/"
+            ".git/"
+            "build/"
+            "dist/"
             "package-lock.json"
           ];
         };

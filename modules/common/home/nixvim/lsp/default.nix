@@ -1,4 +1,6 @@
 { ... } @ inputs: {
+  imports = [./ts_ls];
+
   programs.nixvim.lsp = {
     keymaps = [
       {
@@ -32,7 +34,6 @@
       jsonls.enable = true;
       lua_ls.enable = true;
       tailwindcss.enable = true;
-      ts_ls.enable = true;
     };
   };
 }

@@ -128,7 +128,7 @@
             url = "https://github.com/mswjs/data/";
           }
           {
-            name = "NGRX";
+            name = "NgRX";
             url = "https://ngrx.io/docs/";
           }
           {
@@ -178,6 +178,10 @@
           {
             name = "Webpack";
             url = "https://webpack.js.org/concepts/";
+          }
+          {
+            name = "Zod";
+            url = "https://zod.dev/";
           }
         ];
       };
