@@ -17,7 +17,7 @@
           };
           prompt_prefix = " ";
           selection_caret = "  ";
-          path_display = [ "truncate" "smart" ];
+          path_display = [ "truncate" ];
           borderchars = [ "─" "│" "─" "│" "┌" "┐" "┘" "└" ];
           results_title = false;
           prompt_title = false;
