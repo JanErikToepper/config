@@ -1,5 +1,9 @@
 { ... } @ inputs: {
-  imports = [./ts_ls];
+  imports = [
+    ./angularls
+    ./html
+    ./ts_ls
+  ];
 
   programs.nixvim.lsp = {
     keymaps = [
@@ -25,12 +29,10 @@
       }
     ];
     servers = {
-      angularls.enable = true;
       bashls.enable = true;
       cssls.enable = true;
       diagnosticls.enable = true;
       dockerls.enable = true;
-      html.enable = true;
       jsonls.enable = true;
       lua_ls.enable = true;
       tailwindcss.enable = true;
