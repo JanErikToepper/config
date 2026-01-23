@@ -23,7 +23,7 @@
           return false
         end
       '';
-      debounce_delay = 0;
+      debounce_delay = 5000;
     };
   };
 }

@@ -1,6 +1,5 @@
 { ... } @ inputs: {
   imports = [
-    ./angularls
     ./html
     ./ts_ls
   ];
@@ -29,6 +28,7 @@
       }
     ];
     servers = {
+      angularls.enable = true;
       bashls.enable = true;
       cssls.enable = true;
       diagnosticls.enable = true;
