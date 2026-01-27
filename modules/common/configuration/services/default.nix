@@ -31,6 +31,7 @@
       enable = true;
       audio.enable = true;
     };
+    envfs.enable = true;
     earlyoom.enable = true;
     openssh.enable = true;
   };

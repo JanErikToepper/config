@@ -1,5 +1,8 @@
 { ... } @ inputs: {
-  imports = [ ./chromium ];
+  imports = [
+    ./chromium
+    ./nix-ld
+  ];
 
   programs = {
     hyprland = {

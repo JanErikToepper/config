@@ -69,6 +69,11 @@ in {
     }
     {
       mode = "n";
+      key = "<leader>ft";
+      action = "<cmd>lua require('telescope.builtin').treesitter()<cr>";
+    }
+    {
+      mode = "n";
       key = "<leader>ga";
       action = "<cmd>lua ${stageAll}; require('neogit').action('commit', 'amend')()<cr>";
     }
