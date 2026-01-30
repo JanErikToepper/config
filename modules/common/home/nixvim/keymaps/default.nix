@@ -55,11 +55,6 @@ in {
     {
       mode = "n";
       key = "<leader>fg";
-      action = "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>";
-    }
-    {
-      mode = "n";
-      key = "<leader>fG";
       action = "<cmd>lua require('telescope.builtin').live_grep()<cr>";
     }
     {
@@ -68,14 +63,14 @@ in {
       action = "<cmd>lua require('telescope.builtin').help_tags()<cr>";
     }
     {
+      mode = [ "n" "v" ];
+      key = "<leader>fk";
+      action = "<cmd>lua require('telescope.builtin').grep_string()<cr>";
+    }
+    {
       mode = "n";
       key = "<leader>fr";
       action = "<cmd>lua require('spectre').open()<cr>";
-    }
-    {
-      mode = [ "n" "v" ];
-      key = "<leader>fy";
-      action = "<cmd>lua require('telescope.builtin').grep_string()<cr>";
     }
     {
       mode = "n";
@@ -93,19 +88,14 @@ in {
       action = "<cmd>lua ${stageAll}; require('neogit').action('commit', 'commit')()<cr>";
     }
     {
-      mode = "v";
-      key = "<leader>gd";
-      action = "<cmd>'<,'>AdvancedGitSearch diff_commit_line<cr>";
-    }
-    {
       mode = "n";
       key = "<leader>gd";
-      action = "<cmd>AdvancedGitSearch diff_branch_file<cr>";
+      action = "<cmd>DiffviewOpen<cr>";
     }
     {
       mode = "n";
       key = "<leader>gD";
-      action = "<cmd>DiffviewOpen<cr>";
+      action = "<cmd>AdvancedGitSearch diff_branch_file<cr>";
     }
     {
       mode = "n";

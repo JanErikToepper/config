@@ -2,10 +2,13 @@
 
 homeDir="$HOME";
 processIdFilename=".wf-recorder-process-id";
+outputFilename="record.mp4";
+
 processIdFilepath="$homeDir/$processIdFilename";
+outputFilepath="$homeDir/$outputFilename";
 
 startRecording() {
-  wf-recorder -g "$(slurp)" -f "$homeDir/record.mp4" -y 2> /dev/null&
+  wf-recorder -g "$(slurp)" -f "$outputFilepath" -y 2> /dev/null&
 
   echo "$!" > "$processIdFilepath";
 }
@@ -17,7 +20,7 @@ stopRecording() {
   kill "$pid";
   rm "$processIdFilepath";
 
-  notify-send "Screen recorder" "Record completed";
+  notify-send "Screen recorder" "Record saved at $outputFilepath";
 }
 
 if [[ ! -f "$processIdFilepath" ]]; then
