@@ -1,5 +1,6 @@
 { ... } @ inputs: {
   imports = [
+    ./mako
     ./waybar
   ];
 }

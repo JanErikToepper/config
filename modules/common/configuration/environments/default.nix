@@ -10,8 +10,8 @@
       unzip
       hyprshot
       wf-recorder
-      bazel
       slurp # dep of wf-recorder
+      libnotify # utility for wf-recorder
       inotify-tools # dep of vim.lsp
       nodePackages.nodejs # dep of treesitter
     ];

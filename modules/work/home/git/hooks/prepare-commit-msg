@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 COMMIT_MSG_FILE=$1
 COMMIT_SOURCE=$2
@@ -30,5 +30,4 @@ case "$classification" in
 esac
 
 echo "[$classification_abbreviation] $ticket_id: $commit_message" > "$COMMIT_MSG_FILE"
-exit 0;
 

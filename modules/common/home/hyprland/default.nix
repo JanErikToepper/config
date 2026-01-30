@@ -28,6 +28,7 @@
         "$mainMod CTRL, b, exec, chromium http://localhost:4200/"
         "$mainMod, e, exec, $fileManager"
         "$mainMod, s, exec, hyprshot -m region -z -s --clipboard-only"
+        "$mainMod, r, exec, rc"
 
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
@@ -66,7 +67,5 @@
   };
 
   programs.kitty.enable = true;
-
-  services.mako.enable = true;
 }
 

@@ -4,5 +4,7 @@
     ./git
     ./hyprland
   ];  
+
+  home.stateVersion = inputs.core.version;
 }
 

@@ -16,7 +16,6 @@
   outputs = { ... } @ inputs:
     let
       core = rec {
-        version = "25.05";
         nixpkgs = inputs.nixpkgs;
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         home-manager = inputs.home-manager;

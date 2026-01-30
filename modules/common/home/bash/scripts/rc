@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+homeDir="$HOME";
+processIdFilename=".wf-recorder-process-id";
+processIdFilepath="$homeDir/$processIdFilename";
+
+startRecording() {
+  wf-recorder -g "$(slurp)" -f "$homeDir/record.mp4" -y 2> /dev/null&
+
+  echo "$!" > "$processIdFilepath";
+}
+
+stopRecording() {
+  local pid;
+  pid="$(cat "$processIdFilepath")";
+  
+  kill "$pid";
+  rm "$processIdFilepath";
+
+  notify-send "Screen recorder" "Record completed";
+}
+
+if [[ ! -f "$processIdFilepath" ]]; then
+  startRecording;
+else
+  stopRecording;
+fi
+

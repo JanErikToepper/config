@@ -55,7 +55,12 @@ in {
     {
       mode = "n";
       key = "<leader>fg";
-      action = "<cmd>Telescope live_grep<cr>";
+      action = "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>fG";
+      action = "<cmd>lua require('telescope.builtin').live_grep()<cr>";
     }
     {
       mode = "n";
@@ -68,9 +73,9 @@ in {
       action = "<cmd>lua require('spectre').open()<cr>";
     }
     {
-      mode = "n";
-      key = "<leader>ft";
-      action = "<cmd>lua require('telescope.builtin').treesitter()<cr>";
+      mode = [ "n" "v" ];
+      key = "<leader>fy";
+      action = "<cmd>lua require('telescope.builtin').grep_string()<cr>";
     }
     {
       mode = "n";

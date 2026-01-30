@@ -16,7 +16,6 @@
       name = "Hackneyed";
       package = inputs.core.pkgs.hackneyed;
     };
-    stateVersion = inputs.core.version;
   };
 }
 

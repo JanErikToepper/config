@@ -2,8 +2,6 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
-  system.stateVersion = inputs.core.version;
-
   hardware = {
     bluetooth.enable = true;
     graphics.enable = true;
