@@ -5,6 +5,6 @@
     ./hyprland
   ];  
 
-  home.stateVersion = inputs.core.version;
+  home.stateVersion = "25.05";
 }
 
