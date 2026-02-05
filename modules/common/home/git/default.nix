@@ -21,7 +21,6 @@
       pull.rebase = true;
       push.autoSetupRemote = true;
       rebase.updateRefs = true;
-      rerere.enabled = true;
     };
   };
 }

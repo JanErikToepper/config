@@ -119,11 +119,6 @@ in {
     }
     {
       mode = "n";
-      key = "<leader>G";
-      action = "<cmd>Neogit<cr>";
-    }
-    {
-      mode = "n";
       key = "<leader>gsp";
       action = "<cmd>lua require('neogit').action('stash', 'pop')()<cr>";
     }
@@ -145,7 +140,7 @@ in {
     {
       mode = "n";
       key = "<leader>grc";
-      action = "<cmd>lua ${stageAll}; require('neogit').action('rebase', 'continue')()<cr>";
+      action = "<cmd>lua if (require('neogit.lib.git.merge').any_conflicted()) then vim.notify('Open merge conflicts', 'warn', { title = 'Neogit' }) else ${stageAll}; require('neogit').action('rebase', 'continue')() end<cr>";
     }
     {
       mode = "n";
@@ -176,6 +171,11 @@ in {
       mode = "n";
       key = "<leader>gxh";
       action = "<cmd>lua ${stageAll}; require('neogit.lib.git.cli').reset.hard.args(require('neogit.lib.git.branch').current()).call(); vim.cmd('e!')<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>G";
+      action = "<cmd>Neogit<cr>";
     }
     {
       mode = "n";

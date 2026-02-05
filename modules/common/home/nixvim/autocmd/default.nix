@@ -8,7 +8,7 @@
       ];
     }
     {
-      command = "nnoremap <buffer> <cr> <cr><cmd>cclose<cr>";
+      command = "nnoremap <buffer> q <cmd>cclose<cr>";
       event = "FileType";
       pattern = "qf";
     }
