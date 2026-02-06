@@ -1,4 +1,5 @@
 { ... } @ inputs: let
+  refreshState = "require('neogit.lib.git.repository').instance():refresh()";
   stageAll = "vim.cmd('update'); require('neogit.lib.git.status').stage_all()";
 in {
   programs.nixvim.keymaps = [
@@ -135,7 +136,7 @@ in {
     {
       mode = "n";
       key = "<leader>grb";
-      action = "<cmd>lua require('neogit').action('rebase', 'onto_elsewhere')()<cr>";
+      action = "<cmd>lua ${refreshState}; require('neogit').action('rebase', 'onto_elsewhere')()<cr>";
     }
     {
       mode = "n";
@@ -145,7 +146,7 @@ in {
     {
       mode = "n";
       key = "<leader>gri";
-      action = "<cmd>lua require('neogit').action('rebase', 'interactively')()<cr>";
+      action = "<cmd>lua ${refreshState}; require('neogit').action('rebase', 'interactively')()<cr>";
     }
     {
       mode = "n";
