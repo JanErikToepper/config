@@ -128,6 +128,10 @@
             url = "https://github.com/mswjs/data/";
           }
           {
+            name = "nginx";
+            url = "https://nginx.org/en/docs/";
+          }
+          {
             name = "NgRX";
             url = "https://ngrx.io/docs/";
           }

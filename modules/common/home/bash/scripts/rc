@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 homeDir="$HOME";
-processIdFilename=".wf-recorder-process-id";
+processIdFilename=".wf-recorder.pid";
 outputFilename="record.mp4";
 
 processIdFilepath="$homeDir/$processIdFilename";
