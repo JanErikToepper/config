@@ -76,7 +76,7 @@ in {
     {
       mode = "n";
       key = "<leader>ga";
-      action = "<cmd>lua ${stageAll}; require('neogit').action('commit', 'amend')()<cr>";
+      action = "<cmd>lua ${refreshState}; ${stageAll}; require('neogit').action('commit', 'amend')()<cr>";
     }
     {
       mode = "n";
@@ -92,11 +92,6 @@ in {
       mode = "n";
       key = "<leader>gd";
       action = "<cmd>DiffviewOpen<cr>";
-    }
-    {
-      mode = "n";
-      key = "<leader>gD";
-      action = "<cmd>AdvancedGitSearch diff_branch_file<cr>";
     }
     {
       mode = "n";
@@ -116,7 +111,7 @@ in {
     {
       mode = "n";
       key = "<leader>gP";
-      action = "<cmd>lua require('neogit').action('push', 'to_pushremote', { '--force-with-lease' })()<cr>";
+      action = "<cmd>lua ${refreshState}; require('neogit').action('push', 'to_pushremote', { '--force-with-lease' })()<cr>";
     }
     {
       mode = "n";
@@ -126,7 +121,7 @@ in {
     {
       mode = "n";
       key = "<leader>gss";
-      action = "<cmd>lua require('neogit').action('stash', 'both', { '--include-untracked' })()<cr>";
+      action = "<cmd>lua ${refreshState}; require('neogit').action('stash', 'both', { '--include-untracked' })()<cr>";
     }
     {
       mode = "n";
@@ -166,7 +161,7 @@ in {
     {
       mode = "n";
       key = "<leader>gxs";
-      action = "<cmd>lua require('neogit.lib.git.reset').mixed('HEAD~1')<cr>";
+      action = "<cmd>lua ${refreshState}; require('neogit.lib.git.reset').mixed('HEAD~1')<cr>";
     }
     {
       mode = "n";
