@@ -10,7 +10,6 @@
       unzip
       hyprshot
       wf-recorder
-      gimp
       slurp # dep of wf-recorder
       libnotify # utility for wf-recorder
       inotify-tools # dep of vim.lsp

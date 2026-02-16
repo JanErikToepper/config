@@ -50,11 +50,11 @@ in {
         url = "https://cptest2.hornetsecurity.com/";
       }
       {
-        name = "Gitlab";
+        name = "Legacy Gitlab";
         url = "https://gitlab.hornetsecurity.com/";
       }
       {
-        name = "Gitlab - Internal";
+        name = "Gitlab";
         url = "https://gitlabdev.internal.hornetsecurity.com/";
       }
       {
