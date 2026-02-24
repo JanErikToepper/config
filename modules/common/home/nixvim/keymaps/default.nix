@@ -90,6 +90,11 @@ in {
     }
     {
       mode = "n";
+      key = "<leader>gC";
+      action = "<cmd>lua require('neogit.lib.git.branch').checkout('-')<cr>";
+    }
+    {
+      mode = "n";
       key = "<leader>gd";
       action = "<cmd>DiffviewOpen<cr>";
     }
@@ -97,6 +102,21 @@ in {
       mode = "n";
       key = "<leader>gf";
       action = "<cmd>lua require('neogit').action('fetch', 'fetch_upstream', { '--prune' })()<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>gh";
+      action = "<cmd>lua require('telescope.builtin').git_bcommits()<cr>";
+    }
+    {
+      mode = "v";
+      key = "<leader>gh";
+      action = "<cmd>lua require('telescope.builtin').git_bcommits_range()<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>gH";
+      action = "<cmd>lua require('telescope.builtin').git_commits()<cr>";
     }
     {
       mode = "n";
@@ -111,7 +131,7 @@ in {
     {
       mode = "n";
       key = "<leader>gP";
-      action = "<cmd>lua ${refreshState}; require('neogit').action('push', 'to_pushremote', { '--force-with-lease' })()<cr>";
+      action = "<cmd>lua require('neogit').action('push', 'to_pushremote', { '--force-with-lease' })()<cr>";
     }
     {
       mode = "n";
@@ -121,7 +141,7 @@ in {
     {
       mode = "n";
       key = "<leader>gss";
-      action = "<cmd>lua ${refreshState}; require('neogit').action('stash', 'both', { '--include-untracked' })()<cr>";
+      action = "<cmd>lua require('neogit').action('stash', 'both', { '--include-untracked' })()<cr>";
     }
     {
       mode = "n";
@@ -161,7 +181,7 @@ in {
     {
       mode = "n";
       key = "<leader>gxs";
-      action = "<cmd>lua ${refreshState}; require('neogit.lib.git.reset').mixed('HEAD~1')<cr>";
+      action = "<cmd>lua require('neogit.lib.git.reset').mixed('HEAD~1')<cr>";
     }
     {
       mode = "n";
@@ -190,7 +210,17 @@ in {
     }
     {
       mode = "n";
-      key = "<leader>r";
+      key = "<leader>ro";
+      action = "<cmd>Rest open<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>rr";
+      action = "<cmd>Rest run<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>R";
       action = "<cmd>e!<cr>";
     }
     {

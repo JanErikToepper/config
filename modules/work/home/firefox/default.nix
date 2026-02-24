@@ -1,5 +1,6 @@
 { ... } @ inputs: let
-  outlookUrl = "https://outlook.office.com/mail/0/";
+  teamsUrl = "https://teams.cloud.microsoft/";
+  outlookUrl = "https://outlook.office.com/";
 in {
   programs.firefox = {
     policies = {
@@ -14,24 +15,24 @@ in {
       }];
       Permissions = {
         Camera = {
-          Allow = [ "https://teams.microsoft.com/" ];
+          Allow = [ teamsUrl ];
           Locked = true;
         };
         Microphone = {
-          Allow = [ "https://teams.microsoft.com/" ];
+          Allow = [ teamsUrl ];
           Locked = true;
         };
         Notifications = {
           Allow = [
-            "https://teams.microsoft.com/"
-            "https://outlook.office.com/"
+            teamsUrl
+            outlookUrl
             "https://gitlab.hornetsecurity.com/"
             "https://gitlabdev.internal.hornetsecurity.com/"
           ];
           Locked = true;
         };
         ScreenShare = {
-          Allow = [ "https://teams.microsoft.com/" ];
+          Allow = [ teamsUrl ];
           Locked = true;
         };
       };
@@ -74,8 +75,12 @@ in {
         url = "https://hornetsecurity.app.personio.com/";
       }
       {
-        name = "Pyxis";
+        name = "Pyxis design";
         url = "https://pyxis.vadesecure.com/latest/components/components-overview-5QsSkdUr/";
+      }
+      {
+        name = "Pyxis storybook";
+        url = "http://localhost:4400/";
       }
       {
         name = "SE - Help Center";
@@ -83,7 +88,7 @@ in {
       }
       {
         name = "Teams";
-        url = "https://teams.microsoft.com/v2/";
+        url = teamsUrl;
       }
       {
         name = "Vaultwarden";

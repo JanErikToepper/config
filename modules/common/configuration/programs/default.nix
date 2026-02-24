@@ -1,18 +1,9 @@
 { ... } @ inputs: {
   imports = [
     ./chromium
+    ./hyprland
     ./nix-ld
+    ./vim
   ];
-
-  programs = {
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
-    vim = {
-      enable = true;
-      defaultEditor = true;
-    };
-  };
 }
 

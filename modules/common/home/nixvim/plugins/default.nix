@@ -9,6 +9,7 @@
     ./none-ls
     ./notify
     ./oil
+    ./rest
     ./spectre
     ./telescope
     ./treesitter
