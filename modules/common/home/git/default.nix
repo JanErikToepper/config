@@ -12,7 +12,6 @@
       "node_modules/"
     ];
     settings = {
-      user.name = "Jan Erik Töpper";
       advice.detachedHead = false;
       branch.sort = "-committerdate";
       diff.algorithm = "histogram";
@@ -21,6 +20,7 @@
       pull.rebase = true;
       push.autoSetupRemote = true;
       rebase.updateRefs = true;
+      user.name = "Jan Erik Töpper";
     };
   };
 }

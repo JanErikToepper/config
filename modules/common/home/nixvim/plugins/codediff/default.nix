@@ -12,6 +12,8 @@
       };
       keymaps = {
         view = {
+          next_hunk = "<leader>n";
+          prev_hunk = "<leader>p";
           next_file = "<leader>fn";
           prev_file = "<leader>fp";
         };

@@ -1,7 +1,9 @@
 { ... } @ inputs: {
-  programs.nixvim.colorschemes.catppuccin = {
-    enable = true;
-    settings.flavour = "mocha";
+  programs.nixvim.colorschemes = {
+    catppuccin = {
+      enable = true;
+      settings.flavour = "mocha";
+    };
   };
 }
 
