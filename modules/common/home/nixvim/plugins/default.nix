@@ -2,7 +2,7 @@
   imports = [
     ./auto-save
     ./cmp
-    ./diffview
+    ./codediff
     ./gitsigns
     ./markview
     ./neogit

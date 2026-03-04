@@ -5,6 +5,16 @@ in {
   programs.nixvim.keymaps = [
     {
       mode = "n";
+      key = ">";
+      action = "<c-w>>";
+    }
+    {
+      mode = "n";
+      key = "<";
+      action = "<c-w><";
+    }
+    {
+      mode = "n";
       key = "gD";
       action = "<cmd>lua require('telescope.builtin').lsp_references()<cr>";
     }
@@ -96,7 +106,7 @@ in {
     {
       mode = "n";
       key = "<leader>gd";
-      action = "<cmd>DiffviewOpen<cr>";
+      action = "<cmd>CodeDiff<cr>";
     }
     {
       mode = "n";
@@ -105,13 +115,13 @@ in {
     }
     {
       mode = "n";
-      key = "<leader>gh";
-      action = "<cmd>lua require('telescope.builtin').git_bcommits()<cr>";
+      key = "<leader>ghp";
+      action = "<cmd>Gitsigns preview_hunk_inline<cr>";
     }
     {
-      mode = "v";
-      key = "<leader>gh";
-      action = "<cmd>lua require('telescope.builtin').git_bcommits_range()<cr>";
+      mode = "n";
+      key = "<leader>ghx";
+      action = "<cmd>Gitsigns reset_hunk<cr>";
     }
     {
       mode = "n";
@@ -170,16 +180,6 @@ in {
     }
     {
       mode = "n";
-      key = "<leader>ghp";
-      action = "<cmd>Gitsigns preview_hunk_inline<cr>";
-    }
-    {
-      mode = "n";
-      key = "<leader>ghx";
-      action = "<cmd>Gitsigns reset_hunk<cr>";
-    }
-    {
-      mode = "n";
       key = "<leader>gxs";
       action = "<cmd>lua require('neogit.lib.git.reset').mixed('HEAD~1')<cr>";
     }
@@ -192,6 +192,11 @@ in {
       mode = "n";
       key = "<leader>G";
       action = "<cmd>Neogit<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>l";
+      action = "<cmd>e!<cr>";
     }
     {
       mode = "n";
@@ -217,11 +222,6 @@ in {
       mode = "n";
       key = "<leader>rr";
       action = "<cmd>Rest run<cr>";
-    }
-    {
-      mode = "n";
-      key = "<leader>R";
-      action = "<cmd>e!<cr>";
     }
     {
       mode = "n";

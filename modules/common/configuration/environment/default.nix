@@ -5,6 +5,7 @@
       NIXOS_OZONE_WL = "1";
     };
     systemPackages = with inputs.core.pkgs; [
+      uwsm
       vim
       git
       unzip

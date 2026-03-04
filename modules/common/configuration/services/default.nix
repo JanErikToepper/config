@@ -8,6 +8,7 @@
   ];
 
   services = {
+    dbus.implementation = "broker";
     envfs.enable = true;
     earlyoom.enable = true;
     openssh.enable = true;

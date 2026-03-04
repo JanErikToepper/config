@@ -4,7 +4,7 @@
     autoread = true;
     background = "dark";
     backup = false;
-    clipboard = "unnamedplus";
+    #clipboard = "unnamedplus";
     complete = "";
     endofline = false;
     expandtab = true;

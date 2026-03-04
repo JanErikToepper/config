@@ -1,7 +1,7 @@
 { ... } @ inputs: {
   imports = [
     ./core
-    ./environments
+    ./environment
     ./programs
     ./services
     ./user
