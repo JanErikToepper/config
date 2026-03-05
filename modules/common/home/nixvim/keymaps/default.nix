@@ -215,13 +215,28 @@ in {
     }
     {
       mode = "n";
-      key = "<leader>ro";
-      action = "<cmd>Rest open<cr>";
+      key = "<leader>rc";
+      action = "<cmd>Rest cookies<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>rl";
+      action = "<cmd>Rest logs<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>rep";
+      action = "<cmd>Rest env show<cr>";
     }
     {
       mode = "n";
       key = "<leader>rr";
       action = "<cmd>Rest run<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>res";
+      action = "<cmd>Rest env select<cr>";
     }
     {
       mode = "n";

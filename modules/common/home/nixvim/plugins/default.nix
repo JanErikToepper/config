@@ -9,7 +9,6 @@
     ./none-ls
     ./notify
     ./oil
-    ./rest
     ./spectre
     ./telescope
     ./treesitter
@@ -18,6 +17,7 @@
   programs.nixvim.plugins = {
     autoclose.enable = true;
     lspconfig.enable = true;
+    rest.enable = true;
     tmux-navigator.enable = true;
     ts-autotag.enable = true;
     web-devicons.enable = true;
