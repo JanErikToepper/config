@@ -1,7 +1,7 @@
 { ... } @ inputs: {
   programs.nixvim.lsp.servers = {
-    basedpyright.enable = true;
-    djlsp.enable = true;
+    pyright.enable = true;
+    ruff.enable = true;
   };
 }
 

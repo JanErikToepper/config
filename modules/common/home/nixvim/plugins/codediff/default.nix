@@ -1,6 +1,6 @@
 { ... } @ inputs: {
   programs.nixvim.plugins.codediff = {
-    enable = true;
+    enable = false;
     settings = {
       diff = {
         hide_merge_artifacts = true;

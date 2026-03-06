@@ -3,6 +3,7 @@
     ./auto-save
     ./cmp
     ./codediff
+    ./diffview
     ./gitsigns
     ./markview
     ./neogit

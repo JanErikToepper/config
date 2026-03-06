@@ -106,7 +106,7 @@ in {
     {
       mode = "n";
       key = "<leader>gd";
-      action = "<cmd>CodeDiff<cr>";
+      action = "<cmd>DiffviewOpen<cr>";
     }
     {
       mode = "n";
@@ -240,13 +240,28 @@ in {
     }
     {
       mode = "n";
+      key = "<leader>tc";
+      action = "<cmd>tabnew<cr>";
+    }
+    {
+      mode = "n";
       key = "<leader>tn";
       action = "<cmd>tabn<cr>";
     }
     {
       mode = "n";
+      key = "<leader>tN";
+      action = "<cmd>+tabmove<cr>";
+    }
+    {
+      mode = "n";
       key = "<leader>tp";
       action = "<cmd>tabp<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>tP";
+      action = "<cmd>-tabmove<cr>";
     }
     {
       mode = "n";

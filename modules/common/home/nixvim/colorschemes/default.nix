@@ -4,7 +4,8 @@
       enable = false;
       settings.flavour = "mocha";
     };
-    cyberdream.enable = true;
+    cyberdream.enable = false;
+    dracula.enable = true;
   };
 }
 
