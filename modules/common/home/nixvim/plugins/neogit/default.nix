@@ -21,7 +21,7 @@
       rebase_editor.kind = "tab";
       integrations = {
         telescope = true;
-        codediff = true;
+        diffview = true;
       };
     };
   };

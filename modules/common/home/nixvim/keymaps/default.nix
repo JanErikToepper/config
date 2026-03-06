@@ -106,7 +106,7 @@ in {
     {
       mode = "n";
       key = "<leader>gd";
-      action = "<cmd>CodeDiff<cr>";
+      action = "<cmd>DiffviewOpen<cr>";
     }
     {
       mode = "n";
@@ -132,6 +132,11 @@ in {
       mode = "n";
       key = "<leader>gl";
       action = "<cmd>lua require('neogit').action('log', 'log_current', { '--decorate' })()<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>gm";
+      action = "<cmd>lua require('neogit').action('branch', 'open_pull_request')()<cr>";
     }
     {
       mode = "n";
@@ -210,33 +215,58 @@ in {
     }
     {
       mode = "n";
+      key = "<leader>oc";
+      action = "<cmd>Obsidian toggle_checkbox<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>od";
+      action = "<cmd>Obsidian follow_link vsplit<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>oD";
+      action = "<cmd>Obsidian backlinks<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>of";
+      action = "<cmd>Obsidian search<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>oip";
+      action = "<cmd>Obsidian paste_img<cr>";
+    }
+    {
+      mode = "v";
+      key = "<leader>ol";
+      action = "<cmd>Obsidian link<cr>";
+    }
+    {
+      mode = "v";
+      key = "<leader>oL";
+      action = "<cmd>Obsidian link_new<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>or";
+      action = "<cmd>Obsidian rename<cr>";
+    }
+    {
+      mode = "v";
+      key = "<leader>ox";
+      action = "<cmd>Obsidian extract_note<cr>";
+    }
+    {
+      mode = "n";
       key = "<leader>p";
       action = "<cmd>Gitsigns nav_hunk prev<cr>";
     }
     {
       mode = "n";
-      key = "<leader>rc";
-      action = "<cmd>Rest cookies<cr>";
-    }
-    {
-      mode = "n";
-      key = "<leader>rl";
-      action = "<cmd>Rest logs<cr>";
-    }
-    {
-      mode = "n";
-      key = "<leader>rep";
-      action = "<cmd>Rest env show<cr>";
-    }
-    {
-      mode = "n";
-      key = "<leader>rr";
-      action = "<cmd>Rest run<cr>";
-    }
-    {
-      mode = "n";
-      key = "<leader>res";
-      action = "<cmd>Rest env select<cr>";
+      key = "<leader>tc";
+      action = "<cmd>tabnew<cr>";
     }
     {
       mode = "n";
@@ -245,8 +275,18 @@ in {
     }
     {
       mode = "n";
+      key = "<leader>tN";
+      action = "<cmd>+tabmove<cr>";
+    }
+    {
+      mode = "n";
       key = "<leader>tp";
       action = "<cmd>tabp<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>tP";
+      action = "<cmd>-tabmove<cr>";
     }
     {
       mode = "n";

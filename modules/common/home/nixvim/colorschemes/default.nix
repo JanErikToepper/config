@@ -1,10 +1,9 @@
 { ... } @ inputs: {
   programs.nixvim.colorschemes = {
     catppuccin = {
-      enable = false;
+      enable = true;
       settings.flavour = "mocha";
     };
-    cyberdream.enable = true;
   };
 }
 
