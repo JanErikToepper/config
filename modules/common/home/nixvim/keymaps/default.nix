@@ -126,7 +126,12 @@ in {
     {
       mode = "n";
       key = "<leader>gH";
-      action = "<cmd>lua require('telescope.builtin').git_commits()<cr>";
+      action = "<cmd>lua require('telescope.builtin').git_bcommits()<cr>";
+    }
+    {
+      mode = "v";
+      key = "<leader>gH";
+      action = "<cmd>lua require('telescope.builtin').git_bcommits_range()<cr>";
     }
     {
       mode = "n";
@@ -190,6 +195,11 @@ in {
     }
     {
       mode = "n";
+      key = "<leader>gxS";
+      action = "<cmd>lua require('neogit.lib.git.reset').mixed(require('neogit.lib.git.branch').base_branch())<cr>";
+    }
+    {
+      mode = "n";
       key = "<leader>gxh";
       action = "<cmd>lua ${stageAll}; require('neogit.lib.git.cli').reset.hard.args(require('neogit.lib.git.branch').current()).call(); vim.cmd('e!')<cr>";
     }
@@ -216,7 +226,12 @@ in {
     {
       mode = "n";
       key = "<leader>oc";
-      action = "<cmd>Obsidian toggle_checkbox<cr>";
+      action = "0f[lrX";
+    }
+    {
+      mode = "n";
+      key = "<leader>oC";
+      action = "0f[lr ";
     }
     {
       mode = "n";
@@ -254,6 +269,11 @@ in {
       action = "<cmd>Obsidian rename<cr>";
     }
     {
+      mode = "n";
+      key = "<leader>ot";
+      action = "<cmd>Obsidian tags<cr>";
+    }
+    {
       mode = "v";
       key = "<leader>ox";
       action = "<cmd>Obsidian extract_note<cr>";
@@ -277,6 +297,11 @@ in {
       mode = "n";
       key = "<leader>tN";
       action = "<cmd>+tabmove<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>to";
+      action = "<cmd>tabonly<cr>";
     }
     {
       mode = "n";

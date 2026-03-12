@@ -1,8 +1,9 @@
 { ... } @ inputs: {
   services.xserver = {
     xkb = {
-      layout = "de-latin1";
-      variant = "cherryblue";
+      layout = "de";
+      variant = "nodeadkeys";
+      model = "cherryblue";
     };
   };
 }

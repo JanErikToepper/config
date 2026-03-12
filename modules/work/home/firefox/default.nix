@@ -1,6 +1,6 @@
 { ... } @ inputs: let
   teamsUrl = "https://teams.cloud.microsoft/";
-  outlookUrl = "https://outlook.office.com/";
+  outlookUrl = "https://outlook.cloud.microsoft/";
 in {
   programs.firefox = {
     policies = {
@@ -51,8 +51,8 @@ in {
         url = "https://cptest2.hornetsecurity.com/";
       }
       {
-        name = "Legacy Gitlab";
-        url = "https://gitlab.hornetsecurity.com/";
+        name = "Figma";
+        url = "https://www.figma.com/files/team/1448237357392147335/recents-and-sharing/";
       }
       {
         name = "Gitlab";
@@ -65,6 +65,10 @@ in {
       {
         name = "Jira";
         url = "https://hornetsecurity.atlassian.net/jira/dashboards/10279/";
+      }
+      {
+        name = "Legacy Gitlab";
+        url = "https://gitlab.hornetsecurity.com/";
       }
       {
         name = "Outlook";
