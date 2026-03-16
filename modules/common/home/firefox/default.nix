@@ -112,12 +112,20 @@
             url = "http://localhost:4200/";
           }
           {
+            name = "Lodash";
+            url = "https://lodash.com/docs/";
+          }
+          {
             name = "MDN";
             url = "https://developer.mozilla.org/";
           }
           {
             name = "Module Federation";
             url = "https://module-federation.io/guide/start/index.html";
+          }
+          {
+            name = "Moment.js";
+            url = "https://momentjs.com/docs/";
           }
           {
             name = "MSW";

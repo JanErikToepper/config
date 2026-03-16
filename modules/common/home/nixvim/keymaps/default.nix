@@ -215,6 +215,11 @@ in {
     }
     {
       mode = "n";
+      key = "<leader>L";
+      action = "<cmd>checktime<cr>";
+    }
+    {
+      mode = "n";
       key = "<leader>m";
       action = "<cmd>Markview splitToggle<cr>";
     }
