@@ -1,6 +1,5 @@
 { ... } @ inputs: {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowUnfree = true;
 
   hardware = {
     bluetooth.enable = true;
