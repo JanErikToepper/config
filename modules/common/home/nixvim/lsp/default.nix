@@ -33,6 +33,7 @@
       cssls.enable = true;
       diagnosticls.enable = true;
       dockerls.enable = true;
+      jdtls.enable = true;
       jsonls.enable = true;
       tailwindcss.enable = true;
     };

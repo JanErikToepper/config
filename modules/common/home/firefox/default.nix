@@ -104,6 +104,10 @@
             url = "https://fakerjs.dev/api/";
           }
           {
+            name = "Figma";
+            url = "https://www.figma.com/files/team/";
+          }
+          {
             name = "Git";
             url = "https://git-scm.com/docs/";
           }

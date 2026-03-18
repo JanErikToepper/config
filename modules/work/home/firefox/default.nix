@@ -51,10 +51,6 @@ in {
         url = "https://cptest2.hornetsecurity.com/";
       }
       {
-        name = "Figma";
-        url = "https://www.figma.com/files/team/1448237357392147335/recents-and-sharing/";
-      }
-      {
         name = "Gitlab";
         url = "https://gitlabdev.internal.hornetsecurity.com/";
       }

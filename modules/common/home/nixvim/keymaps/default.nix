@@ -210,13 +210,23 @@ in {
     }
     {
       mode = "n";
-      key = "<leader>l";
-      action = "<cmd>e!<cr>";
+      key = "<leader>hc";
+      action = "<cmd>Rest cookies<cr>";
     }
     {
       mode = "n";
-      key = "<leader>L";
-      action = "<cmd>checktime<cr>";
+      key = "<leader>he";
+      action = "<cmd>Rest env select<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>hr";
+      action = "<cmd>Rest run<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>H";
+      action = "<cmd>lua require('oil').open(vim.fn.getcwd() .. '/.http/')<cr>";
     }
     {
       mode = "n";
@@ -287,6 +297,16 @@ in {
       mode = "n";
       key = "<leader>p";
       action = "<cmd>Gitsigns nav_hunk prev<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>r";
+      action = "<cmd>e!<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>R";
+      action = "<cmd>checktime<cr>";
     }
     {
       mode = "n";

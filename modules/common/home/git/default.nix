@@ -6,6 +6,7 @@
       ".direnv/"
       ".env"
       ".envrc"
+      ".http/"
       ".pre-commit-config.yaml"
       "devenv*"
       "dist/"

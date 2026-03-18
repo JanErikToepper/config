@@ -10,6 +10,7 @@
     ./notify
     ./obsidian
     ./oil
+    ./rest
     ./spectre
     ./telescope
     ./treesitter
