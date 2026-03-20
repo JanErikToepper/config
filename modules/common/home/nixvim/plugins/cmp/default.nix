@@ -12,10 +12,10 @@
       preselect = "cmp.PreselectMode.Item";
       sources = [
         {
-          name = "nvim_lsp";
+          name = "snippets";
         }
         {
-          name = "nvim_lsp_signature_help";
+          name = "nvim_lsp";
         }
         {
           name = "path";

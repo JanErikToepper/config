@@ -17,6 +17,10 @@ local function branch_name()
   end
 end
 
+function _G.branch_name()
+  return branch_name()
+end
+
 local function file_path()
   local filepath = vim.fn.expand("%:h") .. "/"
   local filename = vim.fn.expand("%:t")
@@ -44,10 +48,6 @@ local function file_path()
   else
     return ""
   end
-end
-
-function _G.branch_name()
-  return branch_name()
 end
 
 function _G.file_path()

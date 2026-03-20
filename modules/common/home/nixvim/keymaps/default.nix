@@ -300,6 +300,16 @@ in {
     }
     {
       mode = "n";
+      key = "<leader>q";
+      action = "<cmd>norm! qq<cr>";
+    }
+    {
+      mode = "v";
+      key = "<leader>q";
+      action = "<esc><cmd>'<,'> norm! @q<cr>";
+    }
+    {
+      mode = "n";
       key = "<leader>r";
       action = "<cmd>e!<cr>";
     }

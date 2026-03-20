@@ -1,4 +1,7 @@
 { ... } @ inputs: {
-  imports = [ ./neogit ];
+  imports = [
+    ./neogit
+    ./nvim-snippets
+  ];
 }
 

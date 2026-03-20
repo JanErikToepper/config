@@ -1,0 +1,30 @@
+{
+  "listenOn": {
+    "prefix": ["listenOn"],
+    "body": [
+      "listenOn('$1', ($1) => {",
+      "  $0",
+      "});"
+    ]
+  },
+  "listenOnWithFetch": {
+    "prefix": ["listenOnWithFetch"],
+    "body": [
+      "listenOn('$1', ($1) => {",
+      "  this.store.fetch('$2', {",
+      "    when: $0,",
+      "  });",
+      "});"
+    ]
+  },
+  "listenOnWithMultipleFetch": {
+    "prefix": ["listenOnWithMultipleFetch"],
+    "body": [
+      "listenOn('$1', ($1) => {",
+      "  this.store.fetch(['$0'], {",
+      "    when: false,",
+      "  });",
+      "});"
+    ]
+  }
+}
