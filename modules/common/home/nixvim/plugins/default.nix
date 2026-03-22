@@ -9,7 +9,6 @@
     ./none-ls
     ./notify
     ./nvim-snippets
-    ./obsidian
     ./oil
     ./rest
     ./spectre

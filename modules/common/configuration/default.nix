@@ -4,7 +4,6 @@
     ./environment
     ./programs
     ./services
-    ./systemd
     ./user
   ];
 }

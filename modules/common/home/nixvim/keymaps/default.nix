@@ -240,61 +240,6 @@ in {
     }
     {
       mode = "n";
-      key = "<leader>oc";
-      action = "0f[lrX";
-    }
-    {
-      mode = "n";
-      key = "<leader>oC";
-      action = "0f[lr ";
-    }
-    {
-      mode = "n";
-      key = "<leader>od";
-      action = "<cmd>Obsidian follow_link vsplit<cr>";
-    }
-    {
-      mode = "n";
-      key = "<leader>oD";
-      action = "<cmd>Obsidian backlinks<cr>";
-    }
-    {
-      mode = "n";
-      key = "<leader>of";
-      action = "<cmd>Obsidian search<cr>";
-    }
-    {
-      mode = "n";
-      key = "<leader>oip";
-      action = "<cmd>Obsidian paste_img<cr>";
-    }
-    {
-      mode = "v";
-      key = "<leader>ol";
-      action = "<cmd>Obsidian link<cr>";
-    }
-    {
-      mode = "v";
-      key = "<leader>oL";
-      action = "<cmd>Obsidian link_new<cr>";
-    }
-    {
-      mode = "n";
-      key = "<leader>or";
-      action = "<cmd>Obsidian rename<cr>";
-    }
-    {
-      mode = "n";
-      key = "<leader>ot";
-      action = "<cmd>Obsidian tags<cr>";
-    }
-    {
-      mode = "v";
-      key = "<leader>ox";
-      action = "<cmd>Obsidian extract_note<cr>";
-    }
-    {
-      mode = "n";
       key = "<leader>p";
       action = "<cmd>Gitsigns nav_hunk prev<cr>";
     }
