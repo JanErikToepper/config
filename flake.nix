@@ -16,7 +16,6 @@
         firefox-addons = inputs.firefox-addons.packages.x86_64-linux;
       };
     in {
-      nixpkgs.config.allowUnfree = true;
       nixosConfigurations = builtins.listToAttrs (map (module: {
         name = module;
         value = core.nixpkgs.lib.nixosSystem {

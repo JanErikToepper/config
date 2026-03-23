@@ -4,10 +4,7 @@
   programs = {
     nixvim.plugins.telescope = {
       enable = true;
-      extensions = {
-        frecency.enable = true;
-        fzf-native.enable = true;
-      };
+      extensions.fzf-native.enable = true;
       settings = {
         defaults = {
           layout_config.horizontal = {

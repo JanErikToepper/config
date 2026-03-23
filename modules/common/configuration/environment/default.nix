@@ -1,13 +1,14 @@
-{ ... } @ inputs: {
+{ pkgs, ... } @ inputs: {
   environment = {
     sessionVariables = {
       WLR_NO_HARDWARE_CURSORS = "1";
       NIXOS_OZONE_WL = "1";
     };
-    systemPackages = with inputs.core.pkgs; [
+    systemPackages = with pkgs; [
       uwsm
       vim
       git
+      zip
       unzip
       hyprshot
       wf-recorder

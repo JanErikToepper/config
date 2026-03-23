@@ -8,6 +8,10 @@ in {
     "$monitorMain" = "desc:Dell Inc. DELL S2817Q J42MC693088M";
     "$monitorExtra" = "desc:Samsung Electric Company U28E590 HNMR508347";
 
+    "$workspace1" = "monitor:$monitorLaptop, persistent:true, default:true, on-created-empty:teams-for-linux";
+    "$workspace2" = "monitor:$monitorMain, persistent:true, default:true, on-created-empty:$terminal tmux";
+    "$workspace3" = "monitor:$monitorExtra, persistent:true, default:true, on-created-empty:$browser";
+
     "monitor" = if laptopIsMostRight then [
       "$monitorExtra, 1920x1080, 0x0, 1"
       "$monitorMain, 1920x1080, 1920x0, 1"
@@ -19,13 +23,13 @@ in {
     ];
 
     "workspace" = if laptopIsMostRight then [
-      "3, monitor:$monitorLaptop, persistent:true, default:true, on-created-empty:$browser --new-window https://teams.microsoft.com/v2/"
-      "2, monitor:$monitorMain, persistent:true, default:true, on-created-empty:$terminal tmux"
-      "1, monitor:$monitorExtra, persistent:true, default:true"
+      "1, $workspace3"
+      "2, $workspace2"
+      "3, $workspace1"
     ] else [
-      "1, monitor:$monitorLaptop, persistent:true, default:true, on-created-empty:$browser --new-window https://teams.microsoft.com/v2/"
-      "2, monitor:$monitorMain, persistent:true, default:true, on-created-empty:$terminal tmux"
-      "3, monitor:$monitorExtra, persistent:true, default:true"
+      "1, $workspace1"
+      "2, $workspace2"
+      "3, $workspace3"
     ];
 
     "bind" = [

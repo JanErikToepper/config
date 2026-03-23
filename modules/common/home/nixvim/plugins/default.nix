@@ -2,15 +2,14 @@
   imports = [
     ./auto-save
     ./cmp
+    #./codediff
     ./diffview
     ./gitsigns
     ./markview
     ./neogit
     ./none-ls
     ./notify
-    ./nvim-snippets
     ./oil
-    ./rest
     ./spectre
     ./telescope
     ./treesitter

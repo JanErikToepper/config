@@ -4,6 +4,7 @@
     settings = {
       mainBar = {
         position = "top";
+        modules-left = [ "hyprland/workspaces" ];
         modules-right = [
           "network"
           "custom/separator"
@@ -49,6 +50,16 @@
       window#waybar {
         background-color: transparent;
         color: #fff;
+      }
+
+      #workspaces button {
+        color: #fff;
+        border-radius: 0;
+      }
+
+      #workspaces button.visible {
+        background-color: #fff;
+        color: #000;
       }
 
       #custom-separator,

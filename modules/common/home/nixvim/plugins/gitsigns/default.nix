@@ -8,11 +8,11 @@
         internal = true;
       };
       signs = {
-        add.text = "⏽";
-        change.text = "⏽";
-        changedelete.text = "⏽";
-        delete.text = "⏽";
-        topdelete.text = "⏽";
+        add.text = "┃";
+        change.text = "┃";
+        changedelete.text = "┃";
+        delete.text = "┃";
+        topdelete.text = "┃";
       };
     };
   };

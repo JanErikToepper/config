@@ -21,6 +21,7 @@
       pull.rebase = true;
       push.autoSetupRemote = true;
       rebase.updateRefs = true;
+      rerere.enabled = true;
       user.name = "Jan Erik Töpper";
     };
   };

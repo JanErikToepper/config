@@ -1,5 +1,4 @@
 { ... } @ inputs: let
-  teamsUrl = "https://teams.cloud.microsoft/";
   outlookUrl = "https://outlook.cloud.microsoft/";
 in {
   programs.firefox = {
@@ -14,25 +13,12 @@ in {
         urlTemplate = outlookUrl;
       }];
       Permissions = {
-        Camera = {
-          Allow = [ teamsUrl ];
-          Locked = true;
-        };
-        Microphone = {
-          Allow = [ teamsUrl ];
-          Locked = true;
-        };
         Notifications = {
           Allow = [
-            teamsUrl
             outlookUrl
             "https://gitlab.hornetsecurity.com/"
             "https://gitlabdev.internal.hornetsecurity.com/"
           ];
-          Locked = true;
-        };
-        ScreenShare = {
-          Allow = [ teamsUrl ];
           Locked = true;
         };
       };
@@ -76,19 +62,15 @@ in {
       }
       {
         name = "Pyxis design";
-        url = "https://pyxis.vadesecure.com/latest/components/components-overview-5QsSkdUr/";
+        url = "https://www.figma.com/design/VxdDAqHQRiS0PZKqr9Um0E/%F0%9F%93%9A-Pyxis---Documentation?node-id=2-2&p=f&t=aCOBpQsI8CzTud2E-0";
       }
       {
         name = "Pyxis storybook";
-        url = "http://localhost:4400/";
+        url = "http://localhost:8102/";
       }
       {
         name = "SE - Help Center";
         url = "https://hornetsecurity.atlassian.net/servicedesk/customer/portals/";
-      }
-      {
-        name = "Teams";
-        url = teamsUrl;
       }
       {
         name = "Vaultwarden";

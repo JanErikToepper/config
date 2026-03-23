@@ -1,6 +1,6 @@
 { ... } @ inputs: let
-  refreshState = "require('neogit.lib.git.repository').instance():refresh()";
-  stageAll = "vim.cmd('update'); require('neogit.lib.git.status').stage_all()";
+  redrawStatusLine = "vim.cmd('redrawstatus!')";
+  stageAll = "cmd('git add --all')";
 in {
   programs.nixvim.keymaps = [
     {
@@ -15,18 +15,28 @@ in {
     }
     {
       mode = "n";
+      key = "gd";
+      action = "<cmd>lua require('telescope.builtin').lsp_definitions()<cr>";
+    }
+    {
+      mode = "n";
       key = "gD";
       action = "<cmd>lua require('telescope.builtin').lsp_references()<cr>";
     }
     {
       mode = "n";
       key = "gi";
-      action = "<cmd>lua vim.lsp.buf.code_action({ filter = function(x) return x.kind == 'quickfix' and string.match(x.title, 'import') end, apply = true, })<cr>";
+      action = "<cmd>lua require('telescope.builtin').lsp_implementations()<cr>";
     }
     {
       mode = "n";
       key = "gl";
       action = "<cmd>LspRestart<cr>";
+    }
+    {
+      mode = "n";
+      key = "gt";
+      action = "<cmd>lua require('telescope.builtin').lsp_type_definitions()<cr>";
     }
     {
       mode = "n";
@@ -80,18 +90,28 @@ in {
     }
     {
       mode = "n";
+      key = "<leader>fq";
+      action = "<cmd>lua require('telescope.builtin').quickfix()<cr>";
+    }
+    {
+      mode = "n";
       key = "<leader>fr";
       action = "<cmd>lua require('spectre').open()<cr>";
     }
     {
       mode = "n";
+      key = "<leader>fs";
+      action = "<cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>";
+    }
+    {
+      mode = "n";
       key = "<leader>ga";
-      action = "<cmd>lua ${refreshState}; ${stageAll}; require('neogit').action('commit', 'amend')()<cr>";
+      action = "<cmd>lua ${stageAll}; require('neogit').action('commit', 'amend')()<cr>";
     }
     {
       mode = "n";
       key = "<leader>gb";
-      action = "<cmd>lua if (require('neogit.lib.git.status').is_dirty()) then vim.notify('Branch is dirty', 'warn', { title = 'Neogit' }) else require('telescope.builtin').git_branches() end<cr>";
+      action = "<cmd>lua switch_branch()<cr>";
     }
     {
       mode = "n";
@@ -101,7 +121,7 @@ in {
     {
       mode = "n";
       key = "<leader>gC";
-      action = "<cmd>lua require('neogit.lib.git.branch').checkout('-')<cr>";
+      action = "<cmd>lua cmd(\"git switch -\")<cr>";
     }
     {
       mode = "n";
@@ -146,7 +166,7 @@ in {
     {
       mode = "n";
       key = "<leader>gp";
-      action = "<cmd>lua require('neogit').action('pull', 'from_pushremote', { '--rebase' })()<cr>";
+      action = "<cmd>lua require('neogit').action('pull', 'from_pushremote', { '--autostash', '--rebase' })(); ${redrawStatusLine}<cr>";
     }
     {
       mode = "n";
@@ -171,17 +191,17 @@ in {
     {
       mode = "n";
       key = "<leader>grb";
-      action = "<cmd>lua ${refreshState}; require('neogit').action('rebase', 'onto_elsewhere')()<cr>";
+      action = "<cmd>lua require('neogit').action('rebase', 'onto_elsewhere')()<cr>";
     }
     {
       mode = "n";
       key = "<leader>grc";
-      action = "<cmd>lua if (require('neogit.lib.git.merge').any_conflicted()) then vim.notify('Open merge conflicts', 'warn', { title = 'Neogit' }) else ${stageAll}; require('neogit').action('rebase', 'continue')() end<cr>";
+      action = "<cmd>lua continue_rebase()<cr>";
     }
     {
       mode = "n";
       key = "<leader>gri";
-      action = "<cmd>lua ${refreshState}; require('neogit').action('rebase', 'interactively')()<cr>";
+      action = "<cmd>lua require('neogit').action('rebase', 'interactively')()<cr>";
     }
     {
       mode = "n";
@@ -191,17 +211,12 @@ in {
     {
       mode = "n";
       key = "<leader>gxs";
-      action = "<cmd>lua require('neogit.lib.git.reset').mixed('HEAD~1')<cr>";
-    }
-    {
-      mode = "n";
-      key = "<leader>gxS";
-      action = "<cmd>lua require('neogit.lib.git.reset').mixed(require('neogit.lib.git.branch').base_branch())<cr>";
+      action = "<cmd>lua cmd(\"git reset HEAD~1\")<cr>";
     }
     {
       mode = "n";
       key = "<leader>gxh";
-      action = "<cmd>lua ${stageAll}; require('neogit.lib.git.cli').reset.hard.args(require('neogit.lib.git.branch').current()).call(); vim.cmd('e!')<cr>";
+      action = "<cmd>lua cmd(\"git add --all; git reset --hard\")<cr>";
     }
     {
       mode = "n";
@@ -210,23 +225,8 @@ in {
     }
     {
       mode = "n";
-      key = "<leader>hc";
-      action = "<cmd>Rest cookies<cr>";
-    }
-    {
-      mode = "n";
-      key = "<leader>he";
-      action = "<cmd>Rest env select<cr>";
-    }
-    {
-      mode = "n";
-      key = "<leader>hr";
-      action = "<cmd>Rest run<cr>";
-    }
-    {
-      mode = "n";
-      key = "<leader>H";
-      action = "<cmd>lua require('oil').open(vim.fn.getcwd() .. '/.http/')<cr>";
+      key = "<leader>i";
+      action = "<cmd>lua lsp_import()<cr>";
     }
     {
       mode = "n";
@@ -260,18 +260,13 @@ in {
     }
     {
       mode = "n";
-      key = "<leader>R";
-      action = "<cmd>checktime<cr>";
-    }
-    {
-      mode = "n";
       key = "<leader>tc";
       action = "<cmd>tabnew<cr>";
     }
     {
       mode = "n";
       key = "<leader>tn";
-      action = "<cmd>tabn<cr>";
+      action = "<cmd>tabnext<cr>";
     }
     {
       mode = "n";
@@ -286,7 +281,7 @@ in {
     {
       mode = "n";
       key = "<leader>tp";
-      action = "<cmd>tabp<cr>";
+      action = "<cmd>tabprevious<cr>";
     }
     {
       mode = "n";

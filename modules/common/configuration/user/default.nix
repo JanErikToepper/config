@@ -32,6 +32,8 @@
       devenv
       prettierd
       chromium
+      dbeaver-bin
+      spring-boot-cli
     ];
   };
 
