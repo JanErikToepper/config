@@ -8,7 +8,6 @@
     ./neogit
     ./none-ls
     ./notify
-    ./nvim-snippets
     ./oil
     ./rest
     ./spectre

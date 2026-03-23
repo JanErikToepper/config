@@ -1,5 +1,4 @@
 { ... } @ inputs: let
-  teamsUrl = "https://teams.cloud.microsoft/";
   outlookUrl = "https://outlook.cloud.microsoft/";
 in {
   programs.firefox = {
@@ -14,25 +13,12 @@ in {
         urlTemplate = outlookUrl;
       }];
       Permissions = {
-        Camera = {
-          Allow = [ teamsUrl ];
-          Locked = true;
-        };
-        Microphone = {
-          Allow = [ teamsUrl ];
-          Locked = true;
-        };
         Notifications = {
           Allow = [
-            teamsUrl
             outlookUrl
             "https://gitlab.hornetsecurity.com/"
             "https://gitlabdev.internal.hornetsecurity.com/"
           ];
-          Locked = true;
-        };
-        ScreenShare = {
-          Allow = [ teamsUrl ];
           Locked = true;
         };
       };
@@ -85,10 +71,6 @@ in {
       {
         name = "SE - Help Center";
         url = "https://hornetsecurity.atlassian.net/servicedesk/customer/portals/";
-      }
-      {
-        name = "Teams";
-        url = teamsUrl;
       }
       {
         name = "Vaultwarden";

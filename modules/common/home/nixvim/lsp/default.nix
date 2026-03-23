@@ -11,16 +11,8 @@
         lspBufAction = "code_action";
       }
       {
-        key = "gd";
-        lspBufAction = "definition";
-      }
-      {
         key = "gr";
         lspBufAction = "rename";
-      }
-      {
-        key = "gt";
-        lspBufAction = "type_definition";
       }
       {
         key = "K";
@@ -35,6 +27,8 @@
       dockerls.enable = true;
       jdtls.enable = true;
       jsonls.enable = true;
+      lua_ls.enable = true;
+      marksman.enable = true;
       tailwindcss.enable = true;
     };
   };

@@ -8,6 +8,7 @@
       uwsm
       vim
       git
+      zip
       unzip
       hyprshot
       wf-recorder

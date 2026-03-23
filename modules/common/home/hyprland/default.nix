@@ -26,9 +26,11 @@
         "$mainMod, escape, killactive"
         "$mainMod, b, exec, $browser"
         "$mainMod CTRL, b, exec, chromium http://localhost:4200/"
+        "$mainMod, d, exec, dbeaver"
         "$mainMod, e, exec, $fileManager"
-        "$mainMod, s, exec, hyprshot -m region -z -s --clipboard-only"
         "$mainMod, r, exec, rc"
+        "$mainMod, s, exec, hyprshot -m region -z -s --clipboard-only"
+        "$mainMod, t, exec, teams-for-linux"
 
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"

@@ -1,5 +1,5 @@
 { ... } @ inputs: let
-  refreshState = "require('neogit.lib.git.repository').instance():refresh()";
+  refreshState = "require('neogit').refresh()";
   stageAll = "vim.cmd('update'); require('neogit.lib.git.status').stage_all()";
 in {
   programs.nixvim.keymaps = [
@@ -15,6 +15,11 @@ in {
     }
     {
       mode = "n";
+      key = "gd";
+      action = "<cmd>lua require('telescope.builtin').lsp_implementations()<cr>";
+    }
+    {
+      mode = "n";
       key = "gD";
       action = "<cmd>lua require('telescope.builtin').lsp_references()<cr>";
     }
@@ -27,6 +32,11 @@ in {
       mode = "n";
       key = "gl";
       action = "<cmd>LspRestart<cr>";
+    }
+    {
+      mode = "n";
+      key = "gt";
+      action = "<cmd>lua require('telescope.builtin').lsp_type_definitions()<cr>";
     }
     {
       mode = "n";
@@ -55,8 +65,18 @@ in {
     }
     {
       mode = "n";
+      key = "<leader>fb";
+      action = "<cmd>lua require('telescope.builtin').buffers()<cr>";
+    }
+    {
+      mode = "n";
       key = "<leader>fc";
       action = "<cmd>lua require('telescope.builtin').git_status()<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>fd";
+      action = "<leader>lua require('telescope.builtin').diagnostics()<cr>";
     }
     {
       mode = "n";
@@ -85,8 +105,13 @@ in {
     }
     {
       mode = "n";
+      key = "<leader>fs";
+      action = "<cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>";
+    }
+    {
+      mode = "n";
       key = "<leader>ga";
-      action = "<cmd>lua ${refreshState}; ${stageAll}; require('neogit').action('commit', 'amend')()<cr>";
+      action = "<cmd>lua ${stageAll}; require('neogit').action('commit', 'amend')()<cr>";
     }
     {
       mode = "n";
@@ -171,17 +196,17 @@ in {
     {
       mode = "n";
       key = "<leader>grb";
-      action = "<cmd>lua ${refreshState}; require('neogit').action('rebase', 'onto_elsewhere')()<cr>";
+      action = "<cmd>lua require('neogit').action('rebase', 'onto_elsewhere')()<cr>";
     }
     {
       mode = "n";
       key = "<leader>grc";
-      action = "<cmd>lua if (require('neogit.lib.git.merge').any_conflicted()) then vim.notify('Open merge conflicts', 'warn', { title = 'Neogit' }) else ${stageAll}; require('neogit').action('rebase', 'continue')() end<cr>";
+      action = "<cmd>lua ${stageAll}; if (require('neogit.lib.git.merge').any_conflicted()) then vim.notify('Open merge conflicts', 'warn', { title = 'Neogit' }) else require('neogit').action('rebase', 'continue')() end<cr>";
     }
     {
       mode = "n";
       key = "<leader>gri";
-      action = "<cmd>lua ${refreshState}; require('neogit').action('rebase', 'interactively')()<cr>";
+      action = "<cmd>lua require('neogit').action('rebase', 'interactively')()<cr>";
     }
     {
       mode = "n";
